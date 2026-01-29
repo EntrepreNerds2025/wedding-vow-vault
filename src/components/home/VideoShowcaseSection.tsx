@@ -20,7 +20,7 @@ export const VideoShowcaseSection = () => {
             
             <div className="aspect-video rounded-lg overflow-hidden shadow-2xl bg-primary/10">
               <iframe
-                src="https://player.vimeo.com/video/347119375?h=5c67d8c0f8&title=0&byline=0&portrait=0"
+                src="https://player.vimeo.com/video/924622427?title=0&byline=0&portrait=0"
                 className="w-full h-full"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
