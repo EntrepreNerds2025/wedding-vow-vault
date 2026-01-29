@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Search, Instagram, Facebook } from "lucide-react";
+import logo from "@/assets/Dream_Streams_Logo.png";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 
@@ -25,9 +26,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/home" className="flex-shrink-0">
-            <span className="font-display text-2xl md:text-3xl text-primary italic">
-              Dream Streams
-            </span>
+            <img 
+              src={logo} 
+              alt="Dream Streams - Memories to Share" 
+              className="h-12 md:h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
