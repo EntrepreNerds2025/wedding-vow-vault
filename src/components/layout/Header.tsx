@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
+import Logo from "@/assets/Dream_Streams_Logo.png";
 const navItems = [{
   label: "HOME",
   path: "/home"
@@ -38,9 +39,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/home" className="flex-shrink-0">
-            <span className="font-display text-2xl md:text-3xl text-primary italic">
-              Dream Streams
-            </span>
+            <img src={Logo} alt="Dream Streams" className="h-12 md:h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
