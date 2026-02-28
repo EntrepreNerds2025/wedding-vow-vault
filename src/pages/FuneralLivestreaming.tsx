@@ -9,39 +9,67 @@ import breathe8 from "@/assets/services/breathe_8.webp";
 import breathe7 from "@/assets/services/breathe_7.webp";
 import breathe9 from "@/assets/services/breathe_9.webp";
 import breathe6 from "@/assets/services/breathe_6.webp";
+import heroFuneral from "@/assets/funeral/download.webp";
+import goldImg from "@/assets/funeral/download.webp";
+import silverImg from "@/assets/funeral/raising-a-toast.webp";
+import bronzeImg from "@/assets/funeral/celebration-of-life-memorial-venue-las-vegas.webp";
 
 const packages = [
   {
     name: "Gold Package",
+    price: "$1,300",
+    image: goldImg,
+    imageFirst: true,
     features: [
-      "Professional multi-camera livestream",
-      "Custom memorial webpage",
-      "Short commemorative film",
-      "Pre-recorded video tribute",
-      "Exclusive video guest invitation",
-      "Unlimited virtual attendees",
-      "Full recording for on-demand viewing",
-      "Dedicated streaming coordinator",
+      "Celebration of Life/Service Streaming",
+      "Event Flyer Creation",
+      "Unlimited Viewers",
+      "30 minute Planning Session",
+      "3-4 Camera Angles with Mobile Capabilities (switching angles, to give a dynamic stream)",
+      "Pre-record Slideshow",
+      "Include Dream Thank You Video (Provided by you)",
+      "Include Dream Story Video (Edited by Us)",
+      "Dream Page - Custom Landing Page",
+      "USB Stick",
+      "Professional Wireless Input microphones, post-amplifying",
+      "Live Chat Capability",
+      "Internet Provided if Needed",
+      "7-10 Business Days HD Footage Delivery",
     ],
   },
   {
     name: "Silver Package",
+    price: "$900",
+    image: silverImg,
+    imageFirst: false,
     features: [
-      "Professional livestream",
-      "Custom memorial webpage",
-      "Pre-recorded video tribute",
-      "Unlimited virtual attendees",
-      "Full recording for on-demand viewing",
-      "Dedicated streaming coordinator",
+      "Celebration of Life/Service Streaming",
+      "Youtube or Zoom",
+      "Event Flyer Creation",
+      "Unlimited Viewers",
+      "2 Camera Angles with Mobile Capabilities (switching angles to give a dynamic stream)",
+      "Include Dream Thank You Video (Provided by you)",
+      "Pre-record Slideshow",
+      "Professional Audio with wireless Lavaliers post-amplifying",
+      "Live Chat Capability",
+      "Internet Provided if Needed",
+      "7-10 Business Days HD Footage Delivery",
     ],
   },
   {
-    name: "Basic Package",
+    name: "Bronze Package",
+    price: "$600",
+    image: bronzeImg,
+    imageFirst: true,
     features: [
-      "Professional livestream",
-      "Unlimited virtual attendees",
-      "Full recording for on-demand viewing",
-      "Streaming coordinator",
+      "Celebration of Life/Funeral Streaming",
+      "Youtube Only",
+      "Unlimited Viewers",
+      "1 Camera Angle",
+      "Professional Audio post-amplifying",
+      "Live Chat Capability",
+      "Venue Wifi Required",
+      "7-10 Business Days HD Footage Delivery",
     ],
   },
 ];
@@ -64,10 +92,10 @@ const FuneralLivestreaming = () => {
           {/* 1. Hero Banner */}
           <section className="relative w-full h-[70vh] min-h-[400px] overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?w=1600&q=80"
-              alt="Elderly couple embracing with warmth and comfort"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+               src={heroFuneral}
+               alt="Celebration of life with sparklers"
+               className="absolute inset-0 w-full h-full object-cover"
+             />
             <div className="absolute inset-0 bg-primary/30" />
           </section>
 
@@ -257,17 +285,28 @@ const FuneralLivestreaming = () => {
                   Choose the package that best honours your loved one's memory.
                 </p>
               </div>
-              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                {packages.map((pkg, i) => (
-                  <div
-                    key={i}
-                    className="bg-background rounded-lg shadow-lg overflow-hidden border-t-4 border-accent"
-                  >
-                    <div className="p-6">
-                      <h3 className="font-display text-2xl text-primary mb-4 text-center">
-                        {pkg.name}
-                      </h3>
-                      <ul className="space-y-3">
+              <div className="max-w-5xl mx-auto space-y-0">
+                {packages.map((pkg, i) => {
+                  const imageBlock = (
+                    <div className="relative md:w-1/2 aspect-[4/3] overflow-hidden">
+                      <img
+                        src={pkg.image}
+                        alt={pkg.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-primary/40 flex items-center justify-center">
+                        <span className="font-display text-3xl text-primary-foreground drop-shadow-lg">
+                          {pkg.name}
+                        </span>
+                      </div>
+                    </div>
+                  );
+
+                  const detailsBlock = (
+                    <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                      <h3 className="font-display text-2xl text-primary mb-1">{pkg.name}</h3>
+                      <p className="font-display text-3xl text-accent mb-6">{pkg.price}</p>
+                      <ul className="space-y-2">
                         {pkg.features.map((feature, j) => (
                           <li key={j} className="flex items-start gap-2 font-body text-sm text-muted-foreground">
                             <Check className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
@@ -276,13 +315,20 @@ const FuneralLivestreaming = () => {
                         ))}
                       </ul>
                     </div>
-                    <div className="p-4 bg-secondary text-center">
-                      <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
-                        <Link to="/contact">Learn More</Link>
-                      </Button>
+                  );
+
+                  return (
+                    <div key={i}>
+                      <div className={`flex flex-col ${pkg.imageFirst ? 'md:flex-row' : 'md:flex-row-reverse'} bg-background rounded-lg overflow-hidden shadow-lg`}>
+                        {imageBlock}
+                        {detailsBlock}
+                      </div>
+                      {i < packages.length - 1 && (
+                        <div className="border-b border-border my-8" />
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>
