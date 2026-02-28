@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 const weddingClips = [
-  "https://player.vimeo.com/video/787014009",
+  "https://player.vimeo.com/video/925504493",
   "https://player.vimeo.com/video/787014238",
   "https://player.vimeo.com/video/925499861",
   "https://player.vimeo.com/video/787013891",
