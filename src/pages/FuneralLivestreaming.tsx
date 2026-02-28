@@ -9,7 +9,8 @@ import breathe8 from "@/assets/services/breathe_8.webp";
 import breathe7 from "@/assets/services/breathe_7.webp";
 import breathe9 from "@/assets/services/breathe_9.webp";
 import breathe6 from "@/assets/services/breathe_6.webp";
-import heroFuneral from "@/assets/funeral/download.webp";
+import heroFuneral from "@/assets/funeral/Ideas-for-Celebration-of-Life.webp";
+import grandmaImg from "@/assets/funeral/grandma-names-we-love-jpg.webp";
 import goldImg from "@/assets/funeral/download.webp";
 import silverImg from "@/assets/funeral/raising-a-toast.webp";
 import bronzeImg from "@/assets/funeral/celebration-of-life-memorial-venue-las-vegas.webp";
@@ -93,7 +94,7 @@ const FuneralLivestreaming = () => {
           <section className="relative w-full h-[70vh] min-h-[400px] overflow-hidden">
             <img
                src={heroFuneral}
-               alt="Celebration of life with sparklers"
+               alt="Grandpa smiling in a group hug celebration of life"
                className="absolute inset-0 w-full h-full object-cover"
              />
             <div className="absolute inset-0 bg-primary/30" />
@@ -144,7 +145,7 @@ const FuneralLivestreaming = () => {
                     style={{ borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }}
                   />
                   <img
-                    src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?w=800&q=80"
+                    src={grandmaImg}
                     alt="Grandmother embracing grandchild with love"
                     className="relative rounded-lg shadow-lg w-full h-auto object-cover aspect-[4/3]"
                   />
@@ -171,7 +172,55 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
-          {/* 5. We're here to help you */}
+          {/* 5. Video Experience Section */}
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-10">
+                  <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
+                    Because your guests' live viewing experience really does matter
+                  </h2>
+                  <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                    See the difference a professional Dream Streams memorial livestream makes
+                    compared to standard video calling platforms.
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent hidden md:block" />
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent hidden md:block" />
+                  <div className="aspect-video rounded-lg overflow-hidden shadow-2xl bg-primary/10">
+                    <iframe
+                      src="https://player.vimeo.com/video/1169120409?title=0&byline=0&portrait=0"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      title="Dream Streams Funeral Livestream Experience"
+                    />
+                  </div>
+                </div>
+                {/* Zoom vs Dream Streams comparison */}
+                <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                  <div className="text-center p-6 bg-muted rounded-lg">
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-muted-foreground/10 flex items-center justify-center">
+                      <span className="font-display text-2xl text-muted-foreground">Z</span>
+                    </div>
+                    <h3 className="font-display text-lg text-muted-foreground mb-1">Standard Zoom</h3>
+                    <p className="font-body text-sm text-muted-foreground/70">Limited to 40 min on free plan</p>
+                  </div>
+                  <div className="text-center p-6 bg-accent/10 rounded-lg border-2 border-accent">
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent/20 flex items-center justify-center">
+                      <span className="font-display text-2xl text-accent">DS</span>
+                    </div>
+                    <h3 className="font-display text-lg text-primary mb-1">Dream Streams</h3>
+                    <p className="font-body text-sm text-muted-foreground">Unlimited time, unlimited guests</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 6. We're here to help you */}
           <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
@@ -194,7 +243,7 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
-          {/* 6. What Makes Dream Streams Unique */}
+          {/* 7. What Makes Dream Streams Unique */}
           <section className="py-20 bg-primary text-primary-foreground">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
@@ -228,7 +277,7 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
-          {/* 7. Family Photo Section */}
+          {/* 8. Family Photo Section */}
           <section className="relative py-20 bg-secondary overflow-hidden">
             <div
               className="absolute top-10 left-10 w-48 h-48 bg-accent/15 hidden lg:block"
@@ -245,31 +294,6 @@ const FuneralLivestreaming = () => {
                   alt="Family gathering together in remembrance"
                   className="w-full h-auto rounded-lg shadow-2xl object-cover aspect-[16/9]"
                 />
-              </div>
-            </div>
-          </section>
-
-          {/* 8. Spiritual Leader Section */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="font-display text-3xl md:text-4xl text-primary mb-6">
-                  You may also be a Spiritual Leader, Funeral Director, or Celebrant...
-                </h2>
-                <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                  If you are a funeral home, spiritual leader, pastor, imam, rabbi, or celebrant,
-                  Dream Streams can be your trusted livestreaming partner. We work alongside you to
-                  provide families with a professional, respectful streaming experience that
-                  complements your services.
-                </p>
-                <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                  Partner with us to offer an additional level of care and service to grieving
-                  families — allowing their loved ones from around the world to be present during
-                  these important moments.
-                </p>
-                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
-                  <Link to="/contact">Get in Touch</Link>
-                </Button>
               </div>
             </div>
           </section>
@@ -333,7 +357,32 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
-          {/* 10. Ready to Get Started CTA */}
+          {/* 10. Spiritual Leader Section */}
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="font-display text-3xl md:text-4xl text-primary mb-6">
+                  You may also be a Spiritual Leader, Funeral Director, or Celebrant...
+                </h2>
+                <p className="font-body text-muted-foreground leading-relaxed mb-4">
+                  If you are a funeral home, spiritual leader, pastor, imam, rabbi, or celebrant,
+                  Dream Streams can be your trusted livestreaming partner. We work alongside you to
+                  provide families with a professional, respectful streaming experience that
+                  complements your services.
+                </p>
+                <p className="font-body text-muted-foreground leading-relaxed mb-8">
+                  Partner with us to offer an additional level of care and service to grieving
+                  families — allowing their loved ones from around the world to be present during
+                  these important moments.
+                </p>
+                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
+                  <Link to="/contact">Get in Touch</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* 11. Ready to Get Started CTA */}
           <section className="py-20 bg-accent/10">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center">
@@ -348,54 +397,6 @@ const FuneralLivestreaming = () => {
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-body px-8">
                   <Link to="/contact">Let's Chat!</Link>
                 </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* 11. Video Experience Section */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-10">
-                  <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-                    Because your guests' live viewing experience really does matter
-                  </h2>
-                  <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-                    See the difference a professional Dream Streams memorial livestream makes
-                    compared to standard video calling platforms.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent hidden md:block" />
-                  <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent hidden md:block" />
-                  <div className="aspect-video rounded-lg overflow-hidden shadow-2xl bg-primary/10">
-                    <iframe
-                      src="https://player.vimeo.com/video/1169120409?title=0&byline=0&portrait=0"
-                      className="w-full h-full"
-                      frameBorder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      allowFullScreen
-                      title="Dream Streams Funeral Livestream Experience"
-                    />
-                  </div>
-                </div>
-                {/* Zoom vs Dream Streams comparison */}
-                <div className="mt-12 grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                  <div className="text-center p-6 bg-muted rounded-lg">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-muted-foreground/10 flex items-center justify-center">
-                      <span className="font-display text-2xl text-muted-foreground">Z</span>
-                    </div>
-                    <h3 className="font-display text-lg text-muted-foreground mb-1">Standard Zoom</h3>
-                    <p className="font-body text-sm text-muted-foreground/70">Limited to 40 min on free plan</p>
-                  </div>
-                  <div className="text-center p-6 bg-accent/10 rounded-lg border-2 border-accent">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent/20 flex items-center justify-center">
-                      <span className="font-display text-2xl text-accent">DS</span>
-                    </div>
-                    <h3 className="font-display text-lg text-primary mb-1">Dream Streams</h3>
-                    <p className="font-body text-sm text-muted-foreground">Unlimited time, unlimited guests</p>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
