@@ -1,45 +1,57 @@
 
 
-# Funeral Page: Section Reordering + Image Replacements
+# Contact Pages + Funeral Page Updates + CRM Integration
 
-## Changes Summary
+## Overview
+Create a styled contact system with 3 service types (Funeral, Wedding, Other), update the funeral page (banner height, new button, updated links), and connect everything to the Impact Loop CRM.
 
-Four updates to `src/pages/FuneralLivestreaming.tsx`:
+## 1. Funeral Page Updates (`src/pages/FuneralLivestreaming.tsx`)
 
-### 1. Replace Hero Banner Image (Section 1)
-- Copy `Ideas-for-Celebration-of-Life.webp` (grandpa smiling in group hug) to `src/assets/funeral/`
-- Import and use it as the hero image instead of `download.webp`
+- **Banner height**: Change section 3 from `h-[50vh] min-h-[300px]` to `h-[25vh] min-h-[150px]`
+- **"Get Started" button**: Add below the text in "Why Livestream a Funeral" (section 4)
+- **All buttons**: Update every `Link to="/contact"` and `Link to="/pricing"` to point to `/contact/funerals`
 
-### 2. Replace "Why Livestream a Funeral" Image (Section 4)
-- Copy `grandma-names-we-love-jpg.webp` (grandmother with grandchild) to `src/assets/funeral/`
-- Import and use it to replace the current Unsplash stock photo in the two-column layout
+## 2. Contact Page (`src/pages/Contact.tsx`)
 
-### 3. Move Video Experience Section (Section 11) up to right after "Why Livestream a Funeral" (Section 4)
-- Cut the entire Video Experience section (lines ~355-413) including the Vimeo embed and Zoom vs Dream Streams comparison
-- Place it immediately after the "Why Livestream a Funeral" section
+A new page matching the uploaded screenshot designs:
 
-### 4. Move Spiritual Leader Section (Section 8) to after Packages (Section 9)
-- Cut the Spiritual Leader section (lines ~252-275)
-- Place it after the Our Packages section
+- "lets chat." heading in Playfair Display
+- Decorative peach/copper organic blob shapes
+- Underline-style inputs (bottom border only)
+- Service type dropdown at top to switch between Funeral / Wedding / Other
 
-### New Section Order:
-1. Hero Banner (new grandpa image)
-2. Quote + Intro
-3. Banner - Dream and Grieve
-4. Why Livestream a Funeral (new grandma image)
-5. **Video Experience** (moved up from position 11)
-6. We're here to help you
-7. What Makes Dream Streams Unique
-8. Family Photo
-9. Our Packages
-10. **Spiritual Leader** (moved down from position 8)
-11. Ready to Get Started CTA
-12. Final CTA
+**Funeral Form**: Full Name, Email, Phone, Event Date, Location, How did you hear about us (dropdown), Message, Promo Code
 
-### Files Modified:
-- `src/pages/FuneralLivestreaming.tsx` -- reorder sections + update image imports
+**Wedding Form**: Bride Name, Groom Name, Email, Phone, Wedding Date, Ceremony Time, Venue Address, Package Interest (Bronze/Silver/Gold radio), Add-ons (checkboxes: Dream Story, Dream Thank You, Wedding Highlight Film, Social Media Highlight, Additional 1+ Hour, Reception, Zoom TV Monitor, Drone Operator, None), Internet Connectivity, How heard, Message
 
-### Assets Copied:
-- `Ideas-for-Celebration-of-Life.webp` -> `src/assets/funeral/`
-- `grandma-names-we-love-jpg.webp` -> `src/assets/funeral/`
+**Other Form**: Same layout as Funeral
+
+Each form validates with Zod and POSTs to the CRM on submit with success/error toast feedback.
+
+## 3. CRM Integration
+
+Forms POST directly to:
+```text
+POST https://oyjbpxdcazamsdtrrmey.supabase.co/functions/v1/receive-dream-streams-inquiry
+Headers: apikey: <anon-key>, Content-Type: application/json
+```
+
+Payload includes `inquiry_type` ("funeral", "wedding", or "other") plus all form fields. The anon key is publishable and will be stored as a constant in the code.
+
+## 4. Routing (`src/App.tsx`)
+
+- `/contact` redirects to `/contact/funerals`
+- `/contact/funerals`, `/contact/weddings`, `/contact/other` render the Contact page with the matching form active
+
+## 5. Header Navigation (`src/components/layout/Header.tsx`)
+
+Update the "CONTACT US" nav link to point to `/contact`.
+
+## Files to Create
+- `src/pages/Contact.tsx`
+
+## Files to Modify
+- `src/pages/FuneralLivestreaming.tsx` -- banner height, add button, update links
+- `src/App.tsx` -- add contact routes
+- `src/components/layout/Header.tsx` -- update contact link
 
