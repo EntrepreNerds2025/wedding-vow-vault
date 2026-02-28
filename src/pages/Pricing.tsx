@@ -12,8 +12,13 @@ import hero4 from "@/assets/pricing/hero-4.webp";
 import goldImg from "@/assets/pricing/hero-3.webp";
 import silverImg from "@/assets/pricing/hero-2.webp";
 import bronzeImg from "@/assets/pricing/hero-1.webp";
-import dreamInviteImg from "@/assets/pricing/dream-invite.webp";
-import dreamThankyouImg from "@/assets/pricing/dream-thankyou.webp";
+
+import addonReception from "@/assets/pricing/addon-reception.webp";
+import addonSocial from "@/assets/pricing/addon-social.webp";
+import addonVideography from "@/assets/pricing/addon-videography.webp";
+import addonDreamStory from "@/assets/pricing/addon-dreamstory.webp";
+import addonInviteThankYou from "@/assets/pricing/addon-invite-thankyou.webp";
+import addonHour from "@/assets/pricing/addon-hour.webp";
 
 const goldFeatures = [
   "Ceremony Streaming",
@@ -187,81 +192,108 @@ const Pricing = () => {
             </div>
           </section>
 
-          {/* What Makes Dream Streams Unique - Add-ons */}
+          {/* Add-ons Section */}
           <section className="py-16 bg-background">
             <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
-                  What makes Dream Streams Unique?
-                </h2>
+              <div className="max-w-5xl mx-auto mb-12">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+                  <h2 className="font-display text-3xl md:text-4xl text-primary">
+                    Enhance your Wedding Live Stream<br />Experience With <span className="font-bold">Add-ons.</span>
+                  </h2>
+                  <p className="font-display text-accent italic text-right max-w-md">
+                    our featured add-ons are tailored to give your wedding livestream a creative boost
+                  </p>
+                </div>
+                <hr className="border-border" />
               </div>
 
-              {/* Dream Invite */}
-              <div className="max-w-5xl mx-auto mb-16">
-                <div className="grid md:grid-cols-2 gap-10 items-center">
-                  <div className="overflow-hidden rounded-lg shadow-xl">
-                    <img src={dreamInviteImg} alt="Dream Invite" className="w-full aspect-[4/3] object-cover" />
+              {/* Row 1: 3 cards */}
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+                {/* Reception Livestream */}
+                <div>
+                  <div className="overflow-hidden rounded-lg mb-4">
+                    <img src={addonReception} alt="Reception Livestream" className="w-full aspect-[4/3] object-cover" />
                   </div>
-                  <div>
-                    <span className="font-display text-accent italic text-lg">01.</span>
-                    <h3 className="font-display text-2xl text-primary mb-3">Dream Invite</h3>
-                    <p className="font-body text-muted-foreground leading-relaxed mb-3">
-                      An exclusive video guest invitation. Your wedding video invitation will let you
-                      connect with your guests and give them the information they need in a fun and personal way.
-                    </p>
-                    <p className="font-body text-sm text-accent italic">
-                      This package includes drone usage and teleprompter
-                    </p>
+                  <h3 className="font-display text-lg text-primary mb-2">Reception Livestream</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    Up to 90-minute window between ceremony and reception
+                  </p>
+                  <p className="font-display text-accent text-lg">$750</p>
+                </div>
+
+                {/* Social Media Highlight */}
+                <div>
+                  <div className="overflow-hidden rounded-lg mb-4">
+                    <img src={addonSocial} alt="Social Media Highlight" className="w-full aspect-[4/3] object-cover" />
                   </div>
+                  <h3 className="font-display text-lg text-primary mb-2">Social Media Highlight</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    A social media film where we capture elements of your ceremony to share your beautiful story with friends and family.
+                  </p>
+                  <p className="font-display text-accent text-lg">Ceremony $350</p>
+                </div>
+
+                {/* Videography Highlight Film */}
+                <div>
+                  <div className="overflow-hidden rounded-lg mb-4">
+                    <img src={addonVideography} alt="Videography Highlight Film" className="w-full aspect-[4/3] object-cover" />
+                  </div>
+                  <h3 className="font-display text-lg text-primary mb-2">Videography Highlight Film</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    Looking to combine our videographer and live streaming package? Well, you've come to the right place. This allows you to have the best of both worlds. Have your wedding live-streamed while capturing every moment of your special day, put into a short film that can be watched again and again.
+                  </p>
+                  <p className="font-display text-accent text-lg mb-1">Ceremony $1100</p>
+                  <ul className="font-body text-xs text-muted-foreground space-y-0.5 mb-2">
+                    <li>- getting ready (with the bride)</li>
+                    <li>- getting ready (with the groom)</li>
+                    <li>- ceremony</li>
+                    <li>- footage during cocktail hour (venue or park)</li>
+                  </ul>
+                  <p className="font-body text-xs text-accent italic mb-1">* this package includes drone usage</p>
+                  <p className="font-display text-accent text-lg">Ceremony + Reception $1400</p>
                 </div>
               </div>
 
-              {/* Dream Story */}
-              <div className="max-w-5xl mx-auto mb-16">
-                <div className="grid md:grid-cols-2 gap-10 items-center">
-                  <div className="order-2 md:order-1">
-                    <span className="font-display text-accent italic text-lg">02.</span>
-                    <h3 className="font-display text-2xl text-primary mb-3">Dream Story</h3>
-                    <p className="font-body text-muted-foreground leading-relaxed">
-                      A short film of your unique story, to be played while your audience waits for your
-                      live stream ceremony to begin. Your guest would love for you to tell the story of how
-                      you both met and fell in love! What a beautiful opportunity to share your love story
-                      with your friends and family.
-                    </p>
+              {/* Row 2: 3 cards */}
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {/* Dream Story */}
+                <div>
+                  <div className="overflow-hidden rounded-lg mb-4">
+                    <img src={addonDreamStory} alt="Dream Story" className="w-full aspect-[4/3] object-cover" />
                   </div>
-                  <div className="order-1 md:order-2 overflow-hidden rounded-lg shadow-xl bg-primary/10">
-                    <div className="aspect-[4/3]">
-                      <iframe
-                        src="https://player.vimeo.com/video/1169163778?title=0&byline=0&portrait=0"
-                        className="w-full h-full"
-                        frameBorder="0"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        title="Dream Story Example"
-                      />
-                    </div>
-                  </div>
+                  <h3 className="font-display text-lg text-primary mb-2">Dream Story</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    A short film of your unique story, to be played while your audience waits for your live stream ceremony to begin. Your guest would love for you to tell the story of how you both met and fell in love! What a beautiful opportunity to share your love story with your friends and family.
+                  </p>
+                  <p className="font-display text-accent text-lg">$550</p>
                 </div>
-              </div>
 
-              {/* Dream Thank-You */}
-              <div className="max-w-5xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-10 items-center">
-                  <div className="overflow-hidden rounded-lg shadow-xl">
-                    <img src={dreamThankyouImg} alt="Dream Thank-You" className="w-full aspect-[4/3] object-cover" />
+                {/* Dream Invite + Dream Thank You */}
+                <div>
+                  <div className="overflow-hidden rounded-lg mb-4">
+                    <img src={addonInviteThankYou} alt="Dream Invite + Dream Thank You" className="w-full aspect-[4/3] object-cover" />
                   </div>
-                  <div>
-                    <span className="font-display text-accent italic text-lg">03.</span>
-                    <h3 className="font-display text-2xl text-primary mb-3">Dream Thank-You</h3>
-                    <p className="font-body text-muted-foreground leading-relaxed mb-3">
-                      A pre-recorded thank-you-for-viewing clip. What a special way to show your
-                      gratitude and appreciation to your guests by sending them off with one more
-                      chance to thank your guests and everyone who helped to make your day special.
-                    </p>
-                    <p className="font-body text-sm text-accent italic">
-                      This package includes drone usage and teleprompter
-                    </p>
+                  <h3 className="font-display text-lg text-primary mb-2">Dream Invite + Dream Thank You</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    An exclusive video guest invitation. Your wedding video invitation will let you connect with your guests and give them the information they need in a fun and personal way.
+                  </p>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    + A pre-recorded thank-you-for-viewing clip. What a special way to show your gratitude and appreciation to your guests by sending them off with one more chance to thank your guests and everyone who helped to make your day special.
+                  </p>
+                  <p className="font-body text-xs text-accent italic mb-1">* this package includes drone usage</p>
+                  <p className="font-display text-accent text-lg">$450</p>
+                </div>
+
+                {/* Additional Hour */}
+                <div>
+                  <div className="overflow-hidden rounded-lg mb-4 flex items-center justify-center bg-background">
+                    <img src={addonHour} alt="Additional Hour" className="w-48 h-48 object-contain" />
                   </div>
+                  <h3 className="font-display text-lg text-primary mb-2">Additional Hour</h3>
+                  <p className="font-body text-sm text-muted-foreground mb-2">
+                    Purchase an additional hour of coverage to meet the needs of your special day.
+                  </p>
+                  <p className="font-display text-accent text-lg">$150</p>
                 </div>
               </div>
             </div>
