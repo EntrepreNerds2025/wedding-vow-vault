@@ -116,14 +116,14 @@ const FuneralLivestreaming = () => {
                   dignity and care.
                 </p>
                 <Button asChild className="bg-primary hover:bg-primary/90 font-body">
-                  <Link to="/pricing">Learn More</Link>
+                  <Link to="/contact/funerals">Learn More</Link>
                 </Button>
               </div>
             </div>
           </section>
 
           {/* 3. Banner - Dream and Grieve */}
-          <section className="relative w-full h-[50vh] min-h-[300px] overflow-hidden">
+          <section className="relative w-full h-[25vh] min-h-[150px] overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80"
               alt="Memorial flowers and candles"
@@ -164,10 +164,13 @@ const FuneralLivestreaming = () => {
                     Funeral livestreaming allows everyone — no matter where they are — to be part of
                     the service, to grieve together, and to honour the life of someone special.
                   </p>
-                  <p className="font-body text-muted-foreground leading-relaxed">
+                  <p className="font-body text-muted-foreground leading-relaxed mb-6">
                     With Dream Streams, families can share these sacred moments with dignity, comfort,
                     and the highest quality streaming experience available.
                   </p>
+                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
+                    <Link to="/contact/funerals">Get Started</Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -238,7 +241,7 @@ const FuneralLivestreaming = () => {
                   experience for both in-person and virtual attendees.
                 </p>
                 <Button asChild className="bg-primary hover:bg-primary/90 font-body">
-                  <Link to="/pricing">Learn More</Link>
+                  <Link to="/contact/funerals">Learn More</Link>
                 </Button>
               </div>
             </div>
@@ -378,7 +381,7 @@ const FuneralLivestreaming = () => {
                     these important moments.
                   </p>
                   <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
-                    <Link to="/contact">Get in Touch</Link>
+                    <Link to="/contact/funerals">Get in Touch</Link>
                   </Button>
                 </div>
                 <div className="relative">
@@ -409,7 +412,7 @@ const FuneralLivestreaming = () => {
                   livestreaming services.
                 </p>
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-body px-8">
-                  <Link to="/contact">Let's Chat!</Link>
+                  <Link to="/contact/funerals">Let's Chat!</Link>
                 </Button>
               </div>
             </div>
@@ -423,7 +426,7 @@ const FuneralLivestreaming = () => {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-body px-10 text-lg"
               >
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact/funerals">Contact Us</Link>
               </Button>
             </div>
           </section>
