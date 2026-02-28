@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import FuneralLivestreaming from "./pages/FuneralLivestreaming";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,7 +37,8 @@ const App = () => (
             <Route path="/faq" element={<Home />} />
             <Route path="/portfolio" element={<Home />} />
             <Route path="/testimonials" element={<Home />} />
-            <Route path="/contact" element={<Home />} />
+            <Route path="/contact" element={<Navigate to="/contact/funerals" replace />} />
+            <Route path="/contact/:serviceType" element={<Contact />} />
             
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
