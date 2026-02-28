@@ -3,48 +3,76 @@ import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
+import bannerImg from "@/assets/additional/banner.webp";
+import corporateImg from "@/assets/additional/corporate.webp";
+import funeralImg from "@/assets/additional/funeral.webp";
+import graduationImg from "@/assets/additional/graduation.webp";
+import barMitzvahImg from "@/assets/additional/bar_mitzvah.webp";
+import concertsImg from "@/assets/additional/concerts.webp";
+import ticketsImg from "@/assets/additional/tickets.webp";
+
 const services = [
   {
     num: "01",
     title: "CORPORATE & CONFERENCE EVENTS",
     description:
-      "Whether it's a corporate town hall, a product launch, or a major conference, Dream Streams ensures your event reaches a global audience in real-time. Our professional multi-camera livestream setups capture every keynote, panel, and breakout session with broadcast-quality production.",
+      "Reach a wider demographic and expand your community while increasing sales.\n\nGet your employees motivated and mobilized with our corporate streaming solution. Stream your workshops and seminars to engage with them directly anywhere in the world.",
+    image: corporateImg,
   },
   {
     num: "02",
-    title: "FUNERALS AND CELEBRATIONS OF LIFE",
+    title: "FUNERALS",
     description:
-      "We understand how important it is to include loved ones who can't be there in person. Dream Streams provides compassionate, professional funeral livestreaming services so family and friends can participate from anywhere in the world.",
+      "There are times when distance, health or other circumstances make it impossible for some family and friends to attend a funeral and pay their respects. We provide a great alternative allowing those unable to attend the opportunity to participate, say goodbye and watch the funeral for themselves wherever they are in the world.",
+    image: funeralImg,
     link: "/funerallivestreaming",
     linkText: "Learn more about our funeral livestreaming services →",
   },
   {
     num: "03",
-    title: "CONCERTS AND FESTIVALS",
+    title: "EVENTS AND GRADUATIONS",
     description:
-      "Bring the energy of live music to screens everywhere. From intimate acoustic sets to massive outdoor festivals, our team captures the full experience — the crowd, the lights, the sound — and streams it live to fans who can't make it in person.",
+      "In the current time school events and graduations have been canceled or limited to a zoom session. Allow us to deliver a high-quality live stream of your school event or graduation to your parents and community and continue to grow your school's culture.",
+    image: graduationImg,
   },
   {
     num: "04",
-    title: "RELIGIOUS SETTINGS",
+    title: "BAR/BAT MITZVAH",
     description:
-      "Churches, mosques, temples, and other houses of worship rely on Dream Streams to share their services and ceremonies with congregants near and far. We handle the technology so spiritual leaders can focus on their message.",
+      "Bar/Bat Mitzvah ceremonies are unequivocally the most important ritual in a young person's life. It is a joyous occasion for all involved.\n\nWhile it is ideal to have everyone present during such important of days, sometimes it is simply not possible. There may be many reasons such as poor health, financial constraints or perhaps long-distance separates them. Use live streaming as an opportunity to capture such a magnificent moment in one's life.",
+    image: barMitzvahImg,
   },
   {
     num: "05",
-    title: "CONCERTS / LIVE MUSIC",
+    title: "CONCERTS",
     description:
-      "From band performances and DJ sets to music showcases and album release parties — we bring the stage to screens worldwide. Our multi-camera setups and professional audio ensure your audience gets the full experience, no matter where they're watching from.",
+      "Such an incredible way to offer your fans a fun experience from the comfort of their own home. Live stream truly serves as a dual function. Both an event and clips of digital content for future promotional opportunities, communications or brand promotion.",
+    image: concertsImg,
   },
 ];
 
 const moreServices = [
+  "Political Events",
   "Podcasts",
-  "Product Launches",
-  "Travel and Leisure",
-  "Exclusive and Creative Events",
-  "Expos and Trade Shows",
-  "Webinars",
+  "Panel Discussions",
+  "Contest/Influencers Events",
+  "Trade Shows & Fashion Shows",
+  "Summits",
+];
+
+const eventPhases = [
+  {
+    title: "Pre-event planning",
+    items: "Strategy + Creative, Visual Storytelling, Explainer Videos, Marketing Videos, Animated Videos",
+  },
+  {
+    title: "At-event production",
+    items: "Event Videos, Live Stream, Corporate Videos, Drone Videography, Event Photography",
+  },
+  {
+    title: "Post-event promotion",
+    items: "Event Recap Videos, Sizzle Videos, Promotional Videos, Social Media Videos, Video Marketing",
+  },
 ];
 
 const AdditionalServices = () => {
@@ -59,41 +87,22 @@ const AdditionalServices = () => {
       </Helmet>
       <Header />
       <main className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="relative py-20 md:py-28 overflow-hidden">
-          <div className="container mx-auto px-4 max-w-5xl relative z-10">
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Additional Services.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Beyond weddings, Dream Streams offers professional livestreaming for a
-              wide range of events. From corporate conferences to concerts, religious
-              ceremonies to celebrations of life — we bring your moments to the world.
-            </p>
-          </div>
-          {/* Decorative blob */}
-          <div
-            className="absolute -top-10 -right-20 w-72 h-72 md:w-96 md:h-96 rounded-full opacity-20"
-            style={{
-              background:
-                "radial-gradient(circle, hsl(var(--accent)) 0%, transparent 70%)",
-            }}
+        {/* Hero Banner */}
+        <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+          <img
+            src={bannerImg}
+            alt="Speaker presenting at a live event"
+            className="w-full h-full object-cover"
           />
-        </section>
-
-        {/* Reach Millions Live */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80"
-                alt="Speaker at a large conference event"
-                className="w-full h-[400px] md:h-[500px] object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 right-0 md:bottom-8 md:right-8 bg-accent/90 text-accent-foreground p-8 md:p-10 max-w-md rounded-tl-2xl md:rounded-2xl">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
-                  Reach Millions Live
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+            <div className="container mx-auto max-w-6xl">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
+                Additional Services.
+              </h1>
+              <div className="bg-accent/90 text-accent-foreground p-6 md:p-8 max-w-lg rounded-xl">
+                <h2 className="font-display text-2xl md:text-3xl font-bold mb-2">
+                  Reach Thousands Live
                 </h2>
                 <p className="text-sm md:text-base leading-relaxed opacity-95">
                   Our professional livestream production ensures your event reaches
@@ -106,26 +115,19 @@ const AdditionalServices = () => {
         </section>
 
         {/* What other services heading */}
-        <section className="py-12 md:py-16">
+        <section className="py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-5xl text-center">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
               What other live stream services do we offer?
             </h2>
           </div>
         </section>
 
         {/* Alternating Service Cards */}
-        <section className="py-8 md:py-12">
+        <section className="pb-16 md:pb-24">
           <div className="container mx-auto px-4 max-w-6xl space-y-16 md:space-y-24">
             {services.map((service, index) => {
               const isReversed = index % 2 !== 0;
-              const images = [
-                "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&q=80",
-                "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80",
-                "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&q=80",
-                "https://images.unsplash.com/photo-1438032005730-c779502df39b?w=600&q=80",
-                "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80",
-              ];
               return (
                 <div
                   key={service.num}
@@ -133,7 +135,7 @@ const AdditionalServices = () => {
                 >
                   <div className="w-full md:w-1/2">
                     <img
-                      src={images[index]}
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-64 md:h-80 object-cover rounded-xl"
                       loading="lazy"
@@ -141,11 +143,13 @@ const AdditionalServices = () => {
                   </div>
                   <div className="w-full md:w-1/2 space-y-4">
                     <span className="text-accent font-body font-semibold text-sm tracking-widest uppercase">
-                      {service.num} {service.title}
+                      {service.num}. {service.title}
                     </span>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
+                    {service.description.split("\n\n").map((p, i) => (
+                      <p key={i} className="text-muted-foreground leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
                     {service.link && (
                       <Link
                         to={service.link}
@@ -166,7 +170,7 @@ const AdditionalServices = () => {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="flex flex-col md:flex-row gap-12 md:gap-16">
               <div className="w-full md:w-1/2">
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
+                <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
                   And much more:
                 </h3>
                 <ul className="space-y-3">
@@ -182,16 +186,23 @@ const AdditionalServices = () => {
                 </ul>
               </div>
               <div className="w-full md:w-1/2">
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Dream Streams is a multi-faceted production company. In addition to
-                  livestreaming, we also offer professional Photography, Videography,
-                  and Audio services for events of all sizes.
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Whether you need live video, animation or a video marketing strategy,
+                  we work alongside you to share your story during all aspects of your
+                  event, conference, or trade show.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Whether you need a single-camera stream for an intimate gathering or a
-                  full multi-camera production for a large-scale event, our team has the
-                  experience and equipment to deliver exceptional results every time.
-                </p>
+                <div className="space-y-6">
+                  {eventPhases.map((phase) => (
+                    <div key={phase.title}>
+                      <h4 className="font-display text-lg font-bold text-foreground mb-1">
+                        {phase.title}
+                      </h4>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {phase.items}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -202,20 +213,21 @@ const AdditionalServices = () => {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1200&q=80"
-                alt="Laptop showing livestream analytics"
+                src={ticketsImg}
+                alt="Laptop showing event tickets and livestream"
                 className="w-full h-[350px] md:h-[450px] object-cover"
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 md:bottom-8 md:left-8 bg-accent/90 text-accent-foreground p-8 md:p-10 max-w-md rounded-tr-2xl md:rounded-2xl">
-                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
+                <h2 className="font-display text-2xl md:text-3xl font-bold mb-3">
                   Return on your Investment
                 </h2>
                 <p className="text-sm md:text-base leading-relaxed opacity-95">
-                  Livestreaming your event isn't just about reaching more people — it's
-                  about maximizing the value of every moment. Extend your reach, engage
-                  remote audiences, and create lasting content that keeps working long
-                  after the event ends.
+                  With our strategy team, we can help support you monetize your event
+                  live stream with live pay-per-view, entrance fee or donations. You can
+                  also generate leads by adding customizable event registration forms to
+                  collect actionable information from your registrants. Then, integrate
+                  that data to further market your future events.
                 </p>
               </div>
             </div>
@@ -225,7 +237,7 @@ const AdditionalServices = () => {
         {/* Bottom CTA */}
         <section className="bg-primary py-16 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
               Want to reach an unlimited audience..
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-10 max-w-2xl mx-auto">
