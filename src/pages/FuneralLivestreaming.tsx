@@ -9,7 +9,7 @@ import breathe8 from "@/assets/services/breathe_8.webp";
 import breathe7 from "@/assets/services/breathe_7.webp";
 import breathe9 from "@/assets/services/breathe_9.webp";
 import breathe6 from "@/assets/services/breathe_6.webp";
-import heroFuneral from "@/assets/funeral/Ideas-for-Celebration-of-Life.webp";
+import heroFuneral from "@/assets/funeral/Funeral_New_Banner.png";
 import grandmaImg from "@/assets/funeral/grandma-names-we-love-jpg.webp";
 import preachingImg from "@/assets/funeral/preachingatfuneral.webp";
 import goldImg from "@/assets/funeral/download.webp";
@@ -101,40 +101,6 @@ const FuneralLivestreaming = () => {
             <div className="absolute inset-0 bg-primary/30" />
           </section>
 
-          {/* 2. Quote + Intro Section */}
-          <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center">
-                <blockquote className="font-display text-2xl md:text-3xl text-primary italic mb-8">
-                  "You never know how strong you are until being strong is the only choice you have"
-                </blockquote>
-                <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                  At Dream Streams, we understand that losing a loved one is one of the most difficult
-                  experiences in life. Our funeral livestreaming services provide a compassionate way
-                  for family and friends to come together, no matter where they are in the world. We
-                  ensure that every tribute, every memory, and every moment of love is shared with
-                  dignity and care.
-                </p>
-                <Button asChild className="bg-primary hover:bg-primary/90 font-body">
-                  <Link to="/contact/funerals">Learn More</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* 3. Banner - Dream and Grieve */}
-          <section className="relative w-full h-[25vh] min-h-[150px] overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80"
-              alt="Memorial flowers and candles"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-primary/60 flex items-center justify-center">
-              <h2 className="font-display text-3xl md:text-5xl text-primary-foreground text-center px-4">
-                Dream and Grieve with Unlimited Attendees
-              </h2>
-            </div>
-          </section>
 
           {/* 4. Why Livestream a Funeral */}
           <section className="py-20 bg-secondary">
@@ -247,60 +213,6 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
-          {/* 7. What Makes Dream Streams Unique */}
-          <section className="py-20 bg-primary text-primary-foreground">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-3xl md:text-4xl mb-4">
-                  What Makes Dream Streams Unique?
-                </h2>
-                <p className="font-body text-primary-foreground/80 max-w-2xl mx-auto">
-                  We provide more than just a livestream — we create a meaningful, dignified viewing
-                  experience for your guests.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {[
-                  { image: breathe8, label: "Custom Webpage" },
-                  { image: breathe7, label: "Video Tribute" },
-                  { image: breathe9, label: "Memorial Page" },
-                  { image: breathe6, label: "Video Invitation" },
-                ].map((item, i) => (
-                  <div key={i} className="rounded-lg overflow-hidden shadow-2xl">
-                    <img
-                      src={item.image}
-                      alt={item.label}
-                      className="w-full h-auto object-cover aspect-[4/3]"
-                    />
-                    <div className="p-3 bg-primary-foreground/10 text-center">
-                      <span className="font-display text-sm">{item.label}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 8. Family Photo Section */}
-          <section className="relative py-20 bg-secondary overflow-hidden">
-            <div
-              className="absolute top-10 left-10 w-48 h-48 bg-accent/15 hidden lg:block"
-              style={{ borderRadius: "50% 40% 60% 30% / 40% 50% 30% 60%" }}
-            />
-            <div
-              className="absolute bottom-10 right-10 w-36 h-36 bg-accent/15 hidden lg:block"
-              style={{ borderRadius: "30% 60% 40% 50% / 60% 30% 50% 40%" }}
-            />
-            <div className="container mx-auto px-4">
-              <div className="max-w-4xl mx-auto">
-                <img
-                  src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80"
-                  alt="Family gathering together in remembrance"
-                  className="w-full h-auto rounded-lg shadow-2xl object-cover aspect-[16/9]"
-                />
-              </div>
-            </div>
-          </section>
 
           {/* 9. Our Packages */}
           <section className="py-20 bg-secondary">
@@ -418,18 +330,6 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
-          {/* 12. Final CTA */}
-          <section className="py-16 bg-primary">
-            <div className="container mx-auto px-4 text-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-body px-10 text-lg"
-              >
-                <Link to="/contact/funerals">Contact Us</Link>
-              </Button>
-            </div>
-          </section>
         </main>
         <Footer />
       </div>

@@ -360,7 +360,7 @@ const Contact = () => {
   const { serviceType } = useParams<{ serviceType: string }>();
   const navigate = useNavigate();
   const currentType = (
-    serviceType && serviceType in serviceConfig ? serviceType : "funerals"
+    serviceType && serviceType in serviceConfig ? serviceType : "weddings"
   ) as ServiceType;
   const config = serviceConfig[currentType];
 
@@ -412,8 +412,8 @@ const Contact = () => {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="funerals">Funeral Inquiry</SelectItem>
                       <SelectItem value="weddings">Wedding Inquiry</SelectItem>
+                      <SelectItem value="funerals">Funeral Inquiry</SelectItem>
                       <SelectItem value="other">Other Inquiry</SelectItem>
                     </SelectContent>
                   </Select>
