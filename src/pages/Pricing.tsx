@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 
-import hero1 from "@/assets/pricing/hero-1.webp";
-import hero2 from "@/assets/pricing/hero-2.webp";
-import hero3 from "@/assets/pricing/hero-3.webp";
+import hero1 from "@/assets/pricing/bronze.webp";
+import hero2 from "@/assets/pricing/silver.webp";
+import hero3 from "@/assets/pricing/gold.webp";
 import hero4 from "@/assets/pricing/hero-4.webp";
-import goldImg from "@/assets/pricing/gold.webp";
-import silverImg from "@/assets/pricing/silver.webp";
-import bronzeImg from "@/assets/pricing/bronze.webp";
+import goldImg from "@/assets/pricing/hero-3.webp";
+import silverImg from "@/assets/pricing/hero-2.webp";
+import bronzeImg from "@/assets/pricing/hero-1.webp";
 import dreamInviteImg from "@/assets/pricing/dream-invite.webp";
 import dreamThankyouImg from "@/assets/pricing/dream-thankyou.webp";
 
