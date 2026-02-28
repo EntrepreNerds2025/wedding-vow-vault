@@ -1,74 +1,45 @@
 
 
-# Funeral Page Updates: Hero Image + Pricing Layout
+# Funeral Page: Section Reordering + Image Replacements
 
-## 1. Replace Hero Banner
+## Changes Summary
 
-Swap the current Unsplash stock photo hero with the uploaded sparklers/celebration image (`download.webp`). Copy it to `src/assets/funeral/` and import it.
+Four updates to `src/pages/FuneralLivestreaming.tsx`:
 
-## 2. Redesign Packages Section
+### 1. Replace Hero Banner Image (Section 1)
+- Copy `Ideas-for-Celebration-of-Life.webp` (grandpa smiling in group hug) to `src/assets/funeral/`
+- Import and use it as the hero image instead of `download.webp`
 
-Replace the current 3-column card grid with an alternating side-by-side layout matching the original site screenshot:
+### 2. Replace "Why Livestream a Funeral" Image (Section 4)
+- Copy `grandma-names-we-love-jpg.webp` (grandmother with grandchild) to `src/assets/funeral/`
+- Import and use it to replace the current Unsplash stock photo in the two-column layout
 
-- **Gold Package** -- image on left, details + price on right -- $1,300
-- **Silver Package** -- details + price on left, image on right -- $900
-- **Bronze Package** -- image on left, details + price on right -- $600
+### 3. Move Video Experience Section (Section 11) up to right after "Why Livestream a Funeral" (Section 4)
+- Cut the entire Video Experience section (lines ~355-413) including the Vimeo embed and Zoom vs Dream Streams comparison
+- Place it immediately after the "Why Livestream a Funeral" section
 
-Each package row separated by a horizontal divider line.
+### 4. Move Spiritual Leader Section (Section 8) to after Packages (Section 9)
+- Cut the Spiritual Leader section (lines ~252-275)
+- Place it after the Our Packages section
 
-### Package images (copied to `src/assets/funeral/`):
-- Gold: `download.webp` (sparklers celebration) with "Gold Package" text overlay
-- Silver: `raising-a-toast.webp` (champagne toast) with "Silver Package" text overlay
-- Bronze: `celebration-of-life-memorial-venue-las-vegas.webp` (heart stone) with "Bronze Package" text overlay
+### New Section Order:
+1. Hero Banner (new grandpa image)
+2. Quote + Intro
+3. Banner - Dream and Grieve
+4. Why Livestream a Funeral (new grandma image)
+5. **Video Experience** (moved up from position 11)
+6. We're here to help you
+7. What Makes Dream Streams Unique
+8. Family Photo
+9. Our Packages
+10. **Spiritual Leader** (moved down from position 8)
+11. Ready to Get Started CTA
+12. Final CTA
 
-### Updated package details (from the screenshot):
+### Files Modified:
+- `src/pages/FuneralLivestreaming.tsx` -- reorder sections + update image imports
 
-**Gold Package - $1,300**
-- Celebration of Life/Service Streaming
-- Event Flyer Creation
-- Unlimited Viewers
-- 30 minute Planning Session
-- 3-4 Camera Angles with Mobile Capabilities (switching angles, to give a dynamic stream)
-- Pre-record Slideshow
-- Include Dream Thank You Video (Provided by you)
-- Include Dream Story Video (Edited by Us)
-- Dream Page - Custom Landing Page
-- USB Stick
-- Professional Wireless Input microphones, post-amplifying
-- Live Chat Capability
-- Internet Provided if Needed
-- 7-10 Business Days HD Footage Delivery
-
-**Silver Package - $900**
-- Celebration of Life/Service Streaming
-- Youtube or Zoom
-- Event Flyer Creation
-- Unlimited Viewers
-- 2 Camera Angles with Mobile Capabilities (switching angles to give a dynamic stream)
-- Include Dream Thank You Video (Provided by you)
-- Pre-record Slideshow
-- Professional Audio with wireless Lavaliers post-amplifying
-- Live Chat Capability
-- Internet Provided if Needed
-- 7-10 Business Days HD Footage Delivery
-
-**Bronze Package - $600**
-- Celebration of Life/Funeral Streaming
-- Youtube Only
-- Unlimited Viewers
-- 1 Camera Angle
-- Professional Audio post-amplifying
-- Live Chat Capability
-- Venue Wifi Required
-- 7-10 Business Days HD Footage Delivery
-
-## Files
-
-**Assets to copy (3 images):**
-- `user-uploads://download.webp` -> `src/assets/funeral/download.webp`
-- `user-uploads://raising-a-toast.webp` -> `src/assets/funeral/raising-a-toast.webp`
-- `user-uploads://celebration-of-life-memorial-venue-las-vegas.webp` -> `src/assets/funeral/celebration-of-life-memorial-venue-las-vegas.webp`
-
-**Files to modify:**
-- `src/pages/FuneralLivestreaming.tsx` -- replace hero image source + completely redesign the packages section (section 9) to use the alternating image/details layout with prices
+### Assets Copied:
+- `Ideas-for-Celebration-of-Life.webp` -> `src/assets/funeral/`
+- `grandma-names-we-love-jpg.webp` -> `src/assets/funeral/`
 
