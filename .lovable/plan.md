@@ -1,116 +1,49 @@
 
 
-# Dream Streams Website Recreation Plan
+# About Page Build + Social Link Fix
 
-## Project Overview
-Recreate dreamstreams.ca as an exact replica wedding livestream website in Lovable, optimized for SEO with the same URL structure to enable seamless domain migration.
+## 1. Fix Social Media Links (Header + Footer)
 
----
+Update all Instagram and Facebook URLs across the site:
+- Instagram: `https://www.instagram.com/dreamstreams.ca`
+- Facebook: `https://www.facebook.com/dreamstreams.ca`
 
-## Phase 1: Home Page (Starting Now)
+Files to update: `Header.tsx` (4 links - desktop + mobile) and `Footer.tsx` (2 links).
 
-### Header/Navigation
-- Logo (Dream Streams script logo - will need to upload or link)
-- Navigation: HOME | ABOUT | SERVICES | PRICING | BLOG | FAQ | PORTFOLIO | TESTIMONIALS | CONTACT US
-- Social icons (Instagram, Facebook) + Search
-- Mobile hamburger menu
+## 2. Create the About Page
 
-### Hero Section
-- Full-width background image (elegant wedding details - shoes, jewelry, flowers)
-- Embedded video showcase (Vimeo integration)
-- Overlay graphics/text
+Based on the reference screenshot, the About page will be built as a new `src/pages/About.tsx` with these sections:
 
-### Welcome Section
-- "Welcome to Dream Streams!" heading
-- "Wherever. Whenever. Together" tagline
-- Description paragraph about wedding livestreaming
-- "Learn More" button
+### Hero / Our Story Section
+- Left side: Wedding couple photo (`326A8122.webp`) with a decorative copper/orange curved shape overlay in the top-right corner
+- Right side: "the dream team." heading in Playfair Display italic, "OUR STORY" copper subtitle, and the origin story paragraph about getting married during a pandemic
 
-### Our Commitment Section
-- Split layout with image + decorative border
-- "Our commitment to you" text
-- Description about quality livestream service
-- "Learn More" button
+### XOXO + Chapters Section
+- Centered XOXO candy image (`pexels-karolina-grabowska-4016535.webp`)
+- Two-column layout below with "CHAPTER 1" and "CHAPTER 2" (copper headings, body text)
 
-### 4 Benefits Section
-- "Leave the work and worry to us" heading
-- Grid of 4 numbered benefits:
-  1. Come one come all
-  2. High Quality Streaming
-  3. Worry Free
-  4. Above and Beyond
-- Contact Us button
+### Chapter 3 Section
+- Centered wedding photo with masks (`326A8139.webp`)
+- "CHAPTER 3" copper heading and body text centered below
 
-### What Makes Us Unique Section
-- 4 feature icons with descriptions
-- Visual cards/badges
+### The Duo Section
+- "the duo." heading in Playfair Display italic
+- Two portrait photos side by side:
+  - Left: `DSC09552.webp` - "Rovann" / Director / Camera Operator
+  - Right: `Camesha-0018-web.webp` - "Camesha" / Producer / Administrator
 
-### Video Showcase Section
-- "What does a Gold Package look like?" heading
-- Embedded Vimeo wedding video
-- Decorative elements
+### Assets to Copy
+All 5 uploaded photos will be copied into `src/assets/about/`.
 
-### CTA Footer Section
-- "Ready to Get Started?" heading
-- Description text
-- "Let's Chat!" button
+## 3. Wire Up the Route
 
-### Footer
-- Social links
-- Copyright
-- Contact info
+Update `App.tsx` to import and render the new `About` component at `/about` instead of the `Home` placeholder.
 
----
+## Technical Details
 
-## SEO Implementation (Built-In)
-- **Title tag**: "Dream Streams | Wedding Live Streaming | Toronto, Ontario"
-- **Meta description**: Comprehensive description for search results
-- **Canonical URL**: Proper self-referencing canonical tags
-- **Semantic HTML**: Proper H1, H2, H3 hierarchy
-- **Image alt text**: Descriptive alt tags for all images
-- **Structured data**: LocalBusiness + VideoObject schema
-- **Open Graph tags**: For social sharing
-- **react-helmet-async**: For dynamic meta tag management
-
----
-
-## URL Structure (Matching Current Site)
-| Route | Path |
-|-------|------|
-| Home | `/home` (with `/` redirecting) |
-| About | `/about` |
-| Pricing | `/pricing` |
-| Portfolio | `/portfolio` |
-| FAQ | `/faq` |
-| Blog | `/blog` |
-| Contact | `/contact` |
-| Testimonials | `/testimonials` |
-
----
-
-## Design System
-- **Primary colors**: Navy blue (#1a365d), Copper/Orange accent (#C87533)
-- **Fonts**: Playfair Display (headings), Rubik (body text)
-- **Style**: Elegant, romantic, professional wedding aesthetic
-- **White/cream backgrounds with subtle decorative borders
-
----
-
-## Future Phases (After Home Page)
-1. **About page** - Team bios, company story
-2. **Pricing page** - Bronze/Silver/Gold packages + add-ons
-3. **FAQ page** - Common questions with accordions
-4. **Portfolio page** - Video gallery
-5. **Contact page** - Inquiry form (with backend via Supabase)
-6. **Testimonials page** - Customer reviews
-7. **Blog pages** - If needed
-
----
-
-## Technical Notes
-- Images will be hosted in project or linked externally
-- Video embeds via Vimeo iframe
-- Contact form will require Lovable Cloud backend (Phase 2)
-- Responsive design for all screen sizes
-- Sitemap generation for Search Console submission
+- New file: `src/pages/About.tsx`
+- Modified files: `src/App.tsx`, `src/components/layout/Header.tsx`, `src/components/layout/Footer.tsx`
+- Assets copied: 5 images to `src/assets/about/`
+- The decorative copper curve will be done with CSS/SVG to match the original design
+- SEO: Helmet with appropriate title and meta description for the About page
 
