@@ -35,7 +35,7 @@ const Portfolio = () => {
               <h1 className="font-display text-3xl md:text-4xl text-primary text-center mb-8">
                 Portfolio
               </h1>
-              <div className="max-w-3xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
                   <iframe
                     src="https://player.vimeo.com/video/776013593?badge=0&autopause=0&player_id=0"
@@ -70,7 +70,7 @@ const Portfolio = () => {
                 Livestream Wedding Clips
               </h2>
 
-              <div className="max-w-4xl mx-auto space-y-6">
+              <div className="max-w-6xl mx-auto space-y-6">
                 {/* First video - full width */}
                 <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
                   <iframe
