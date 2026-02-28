@@ -11,6 +11,7 @@ import FuneralLivestreaming from "./pages/FuneralLivestreaming";
 import FAQ from "./pages/FAQ";
 import AdditionalServices from "./pages/AdditionalServices";
 import Contact from "./pages/Contact";
+import Testimonials from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,7 +37,7 @@ const App = () => (
             <Route path="/pricing" element={<Home />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/portfolio" element={<Home />} />
-            <Route path="/testimonials" element={<Home />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Navigate to="/contact/weddings" replace />} />
             <Route path="/contact/:serviceType" element={<Contact />} />
             
