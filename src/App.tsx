@@ -37,7 +37,7 @@ const App = () => (
             <Route path="/faq" element={<Home />} />
             <Route path="/portfolio" element={<Home />} />
             <Route path="/testimonials" element={<Home />} />
-            <Route path="/contact" element={<Navigate to="/contact/funerals" replace />} />
+            <Route path="/contact" element={<Navigate to="/contact/weddings" replace />} />
             <Route path="/contact/:serviceType" element={<Contact />} />
             
             {/* 404 catch-all */}
