@@ -15,8 +15,8 @@ const About = () => {
         <title>About Us | Dream Streams – Wedding Livestreaming Toronto</title>
         <meta
           name="description"
-          content="Meet the dream team behind Dream Streams. Our story of love, resilience, and a passion for wedding livestreaming born during a global pandemic."
-        />
+          content="Meet the dream team behind Dream Streams. Our story of love, resilience, and a passion for wedding livestreaming born during a global pandemic." />
+
       </Helmet>
 
       <Header />
@@ -33,19 +33,19 @@ const About = () => {
                   className="absolute -top-8 -right-8 w-[55%] h-auto z-0"
                   viewBox="0 0 300 300"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
+
                   <path
                     d="M300 0 C300 0 300 150 150 200 C0 250 0 300 0 300 L300 300 Z"
-                    fill="hsl(27 60% 49%)"
-                  />
+                    fill="hsl(27 60% 49%)" />
+
                 </svg>
                 <img
                   src={heroImg}
                   alt="Dream Streams founders on their wedding day"
                   className="relative z-10 w-full h-auto object-cover rounded-sm"
-                  loading="eager"
-                />
+                  loading="eager" />
+
               </div>
 
               {/* Right – Text */}
@@ -78,8 +78,8 @@ const About = () => {
                 src={xoxoImg}
                 alt="XOXO candy letters"
                 className="w-full h-auto object-cover"
-                loading="lazy"
-              />
+                loading="lazy" />
+
             </div>
 
             {/* Two-column chapters */}
@@ -89,12 +89,12 @@ const About = () => {
                 <h2 className="font-display text-sm tracking-[0.25em] uppercase text-accent mb-4">
                   Chapter 1
                 </h2>
-                <p className="font-body text-sm leading-relaxed text-muted-foreground">
-                  Initially, for people like Rovann and I, we were heartbroken by the thought of
-                  not having our friends and family witness us make one of the most significant
-                  decisions of our lives. So my extremely intelligent soon to be husband (at the
-                  time) decided he would invest time to learn how to set up a live stream
-                  production himself for our special day.
+                <p className="font-body text-sm leading-relaxed text-muted-foreground">Initially, for people like Rovonn and I, we were heartbroken by the thought of not having our friends and family witness us make one of the most significant decisions of our lives. So my extremely intelligent soon to be husband (at the time) decided he would invest time to learn how to set up a live stream production himself for our special day.
+
+
+
+
+
                 </p>
               </div>
 
@@ -125,8 +125,8 @@ const About = () => {
                 src={masksImg}
                 alt="Couple on their wedding day wearing masks"
                 className="w-full h-auto object-cover"
-                loading="lazy"
-              />
+                loading="lazy" />
+
             </div>
 
             <div className="text-center max-w-3xl mx-auto">
@@ -161,8 +161,8 @@ const About = () => {
                   src={rovannImg}
                   alt="Rovann – Director and Camera Operator"
                   className="w-full aspect-[3/4] object-cover mb-4"
-                  loading="lazy"
-                />
+                  loading="lazy" />
+
                 <p className="font-display text-lg italic text-foreground">Rovann</p>
                 <p className="font-body text-sm text-muted-foreground">
                   Director / Camera Operator
@@ -175,8 +175,8 @@ const About = () => {
                   src={cameshaImg}
                   alt="Camesha – Producer and Administrator"
                   className="w-full aspect-[3/4] object-cover mb-4"
-                  loading="lazy"
-                />
+                  loading="lazy" />
+
                 <p className="font-display text-lg italic text-foreground">Camesha</p>
                 <p className="font-body text-sm text-muted-foreground">
                   Producer / Administrator
@@ -188,8 +188,8 @@ const About = () => {
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 };
 
 export default About;
