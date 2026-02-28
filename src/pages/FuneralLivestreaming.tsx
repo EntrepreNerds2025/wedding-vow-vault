@@ -80,7 +80,7 @@ const FuneralLivestreaming = () => {
   return (
     <>
       <Helmet>
-        <title>Funeral Livestreaming Services | Dream Streams</title>
+        <title>Toronto Funeral and Celebration of Life Livestreaming</title>
         <meta
           name="description"
           content="Compassionate funeral livestreaming services by Dream Streams. Allow loved ones to grieve together from anywhere with professional, dignified memorial streaming."

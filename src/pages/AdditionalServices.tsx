@@ -85,6 +85,7 @@ const AdditionalServices = () => {
           name="description"
           content="Explore Dream Streams' additional livestream services including corporate events, concerts, religious settings, and more."
         />
+        <link rel="canonical" href="https://dreamstreams.ca/services/additional" />
       </Helmet>
       <Header />
       <main className="min-h-screen bg-background">

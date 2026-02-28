@@ -100,6 +100,7 @@ const FAQ = () => {
           name="description"
           content="Frequently asked questions about Dream Streams' wedding livestreaming services, pricing, and process."
         />
+        <link rel="canonical" href="https://dreamstreams.ca/faq" />
       </Helmet>
       <Header />
       <main className="min-h-screen bg-background">
