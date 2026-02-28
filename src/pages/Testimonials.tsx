@@ -168,6 +168,7 @@ const Testimonials = () => {
           name="description"
           content="Read testimonials from happy couples who used Dream Streams for their wedding livestreaming. Real reviews and experiences."
         />
+        <link rel="canonical" href="https://dreamstreams.ca/testimonials" />
       </Helmet>
       <Header />
       <main className="min-h-screen bg-background">

@@ -61,7 +61,7 @@ const Pricing = () => {
   return (
     <>
       <Helmet>
-        <title>Pricing & Packages | Dream Streams</title>
+        <title>Wedding Live Stream Pricing | Toronto, Ontario</title>
         <meta
           name="description"
           content="Explore Dream Streams wedding livestreaming packages — Gold, Silver, and Bronze tiers with add-ons to fit your needs."

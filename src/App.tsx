@@ -43,6 +43,11 @@ const App = () => (
             <Route path="/contact" element={<Navigate to="/contact/weddings" replace />} />
             <Route path="/contact/:serviceType" element={<Contact />} />
             
+            {/* Legacy Squarespace URL redirects */}
+            <Route path="/additional-services" element={<Navigate to="/services/additional" replace />} />
+            <Route path="/contact2" element={<Navigate to="/contact/funerals" replace />} />
+            <Route path="/graduations-and-award-shows" element={<Navigate to="/services/additional" replace />} />
+            
             {/* 404 catch-all */}
             <Route path="*" element={<NotFound />} />
           </Routes>

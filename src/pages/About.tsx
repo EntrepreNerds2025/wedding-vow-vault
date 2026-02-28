@@ -12,10 +12,11 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Dream Streams – Wedding Livestreaming Toronto</title>
+        <title>Live Stream Wedding Videographer | Toronto, Ontario</title>
         <meta
           name="description"
-          content="Meet the dream team behind Dream Streams. Our story of love, resilience, and a passion for wedding livestreaming born during a global pandemic." />
+           content="Meet the dream team behind Dream Streams. Our story of love, resilience, and a passion for wedding livestreaming born during a global pandemic." />
+        <link rel="canonical" href="https://dreamstreams.ca/about" />
 
       </Helmet>
 
