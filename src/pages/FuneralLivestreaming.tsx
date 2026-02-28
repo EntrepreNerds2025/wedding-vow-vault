@@ -11,6 +11,7 @@ import breathe9 from "@/assets/services/breathe_9.webp";
 import breathe6 from "@/assets/services/breathe_6.webp";
 import heroFuneral from "@/assets/funeral/Ideas-for-Celebration-of-Life.webp";
 import grandmaImg from "@/assets/funeral/grandma-names-we-love-jpg.webp";
+import preachingImg from "@/assets/funeral/preachingatfuneral.webp";
 import goldImg from "@/assets/funeral/download.webp";
 import silverImg from "@/assets/funeral/raising-a-toast.webp";
 import bronzeImg from "@/assets/funeral/celebration-of-life-memorial-venue-las-vegas.webp";
@@ -360,24 +361,37 @@ const FuneralLivestreaming = () => {
           {/* 10. Spiritual Leader Section */}
           <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center">
-                <h2 className="font-display text-3xl md:text-4xl text-primary mb-6">
-                  You may also be a Spiritual Leader, Funeral Director, or Celebrant...
-                </h2>
-                <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                  If you are a funeral home, spiritual leader, pastor, imam, rabbi, or celebrant,
-                  Dream Streams can be your trusted livestreaming partner. We work alongside you to
-                  provide families with a professional, respectful streaming experience that
-                  complements your services.
-                </p>
-                <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                  Partner with us to offer an additional level of care and service to grieving
-                  families — allowing their loved ones from around the world to be present during
-                  these important moments.
-                </p>
-                <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
-                  <Link to="/contact">Get in Touch</Link>
-                </Button>
+              <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div>
+                  <h2 className="font-display text-3xl md:text-4xl text-primary mb-6">
+                    You may also be a Spiritual Leader, Funeral Director, or Celebrant...
+                  </h2>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-4">
+                    If you are a funeral home, spiritual leader, pastor, imam, rabbi, or celebrant,
+                    Dream Streams can be your trusted livestreaming partner. We work alongside you to
+                    provide families with a professional, respectful streaming experience that
+                    complements your services.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-8">
+                    Partner with us to offer an additional level of care and service to grieving
+                    families — allowing their loved ones from around the world to be present during
+                    these important moments.
+                  </p>
+                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-body">
+                    <Link to="/contact">Get in Touch</Link>
+                  </Button>
+                </div>
+                <div className="relative">
+                  <div
+                    className="absolute -bottom-6 -right-6 w-40 h-40 bg-accent/20 hidden md:block"
+                    style={{ borderRadius: "60% 40% 30% 70% / 50% 60% 40% 50%" }}
+                  />
+                  <img
+                    src={preachingImg}
+                    alt="Spiritual leader preaching at a funeral service"
+                    className="relative rounded-lg shadow-lg w-full h-auto object-cover aspect-[4/3]"
+                  />
+                </div>
               </div>
             </div>
           </section>
