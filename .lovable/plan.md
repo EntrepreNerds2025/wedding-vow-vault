@@ -1,87 +1,73 @@
 
 
-# Services Dropdown + Wedding Services Page
+# Funeral Livestreaming Page
 
-## 1. Add Services Dropdown to Navigation
+## Overview
+Create `src/pages/FuneralLivestreaming.tsx` to replicate the original funeral services page, and wire it up at `/funerallivestreaming`.
 
-Replace the flat "SERVICES" nav link in the Header with a dropdown menu containing:
-- **Weddings** -> `/services/weddings` (same page as clicking "Services" directly)
-- **Funerals** -> `/funerallivestreaming`
-- **Grad and Award Shows** -> `/services/grad-award-shows`
-- **Additional Services** -> `/services/additional`
+## Page Sections (top to bottom, matching the screenshot)
 
-Clicking "SERVICES" itself will also navigate to `/services` (which shows the weddings page).
+### 1. Hero Banner
+- Full-width image of elderly people embracing (use Unsplash stock photo matching the warm, emotional tone)
 
-The dropdown will use the existing Radix `DropdownMenu` component already installed. On mobile, the dropdown items will appear inline in the hamburger menu as indented sub-items.
-
-## 2. Create the Wedding Services Page
-
-New file: `src/pages/Services.tsx` -- matching the reference screenshot layout:
-
-### Hero Section
-- Full-width wedding photo banner (reuse the existing hero video or a static image approach matching the original site)
-
-### Welcome / Intro Section
-- "Welcome to Dream Streams!" heading with the tagline
-- Paragraph about wedding livestreaming services
+### 2. Quote + Intro Section
+- Inspirational quote: "You never know how strong you are until being strong is the only choice you have"
+- Introductory paragraph about funeral livestreaming services
 - "Learn More" button linking to `/pricing`
 
-### Commitment Section
-- Wedding ring close-up image with decorative copper accent shape overlay
-- "Our Commitment to You" text block with "Contact Us" button
+### 3. Banner - "Dream and Grieve with Unlimited Attendees"
+- Full-width image with overlay text, showing a funeral/memorial setting
 
-### Benefits Section ("Leave the Work and Worry to Us")
-- 4 benefit cards: Come One Come All, High Quality Streaming, Worry Free, Above and Beyond
-- "Contact Us" button at bottom
+### 4. Why Livestream a Funeral Section
+- Two-column layout: image of grandmother with child on left, text on right
+- Explains why families choose livestreaming for memorial services
+- Decorative copper accent shape
 
-### What Makes Dream Streams Unique Section
-- 3-image slider/carousel using the uploaded photos:
-  - `breathe_8.webp` ("dream story" - A Short Film)
-  - `breathe_7.webp` ("dream thank-you" - Pre-Recorded Thank-You Video)
-  - `breathe_9.webp` ("dream page" - Custom Webpage)
-  - `breathe_6.webp` ("dream invite" - Exclusive Video Guest Invitation)
-- Using the existing `embla-carousel-react` package
+### 5. "We're here to help you." Section
+- Text about Dream Streams' compassionate approach to funeral livestreaming
+- "Learn More" button
 
-### Why Livestream Your Wedding Section (new content)
-- Additional reasons section with compelling points about why livestreaming is valuable:
-  - Include elderly/distant relatives, COVID/health concerns, destination weddings, military families, etc.
+### 6. "What Makes Dream Streams Unique?" Section
+- Grid of images showing the custom webpage, laptop mockup, and device views
+- Demonstrates the professional viewing experience guests receive
 
-### Video Showcase Section
-- "What does a Gold Package look like?" heading
-- Vimeo embed: `https://player.vimeo.com/video/924622427`
+### 7. Family Photo Section
+- Large emotional family gathering photo with decorative copper blob shapes
 
-### CTA Section
-- "Ready to Get Started?" with copper accent
-- "Let's Chat!" button linking to `/contact`
+### 8. "You may also be a Spiritual Leader..." Section
+- Addresses funeral directors, spiritual leaders, and other professionals
+- Explains how Dream Streams can partner with them
 
-## 3. Update Routing
+### 9. "Our Packages" Section
+- Package cards displayed in a grid:
+  - **Gold Package**: Full-service with short film, custom webpage, video invite
+  - **Silver Package**: Mid-tier option
+  - **Basic**: Entry-level option
+- Each card with copper accent styling and feature list
 
-In `App.tsx`:
-- `/services` -> `<Services />`
-- `/services/weddings` -> `<Services />` (same component)
-- `/funerallivestreaming` -> placeholder for now
-- `/services/grad-award-shows` -> placeholder for now
-- `/services/additional` -> placeholder for now
+### 10. "Ready to Get Started?" CTA
+- Copper-accented call to action with contact button
 
-## 4. Copy Assets
+### 11. Video Experience Section
+- "Because your guests' live viewing experience really does matter"
+- Vimeo embed: `https://player.vimeo.com/video/1169120409`
+- Zoom icon and 1-hour icon comparison showing Dream Streams vs standard Zoom
 
-Copy the 4 uploaded product images to `src/assets/services/`:
-- `breathe_6.webp`, `breathe_7.webp`, `breathe_8.webp`, `breathe_9.webp`
+### 12. Final CTA Section
+- "Contact Us" button linking to `/contact`
+
+## Files to Modify
+
+- **Create**: `src/pages/FuneralLivestreaming.tsx`
+- **Modify**: `src/App.tsx` - Update `/funerallivestreaming` route to use the new component
 
 ## Technical Details
 
-**Files to create:**
-- `src/pages/Services.tsx` - Main services/weddings page
-
-**Files to modify:**
-- `src/components/layout/Header.tsx` - Replace "SERVICES" flat link with dropdown (desktop: hover/click dropdown, mobile: expandable sub-menu)
-- `src/App.tsx` - Add new routes
-
-**Assets to copy:**
-- 4 images to `src/assets/services/`
-
-**Dependencies used:**
-- `@radix-ui/react-dropdown-menu` (already installed)
-- `embla-carousel-react` (already installed) for the image slider
-- Existing design system (Playfair Display headings, Rubik body, navy/copper/cream palette)
+- Follows the same component structure as `Services.tsx` (Helmet, Header, Footer wrapper)
+- Uses the existing design system: Playfair Display headings, Rubik body, navy/copper/cream palette
+- Decorative copper blob shapes done with CSS border-radius or inline SVG (matching the original site's organic shapes)
+- Unsplash stock images for funeral/memorial/family scenes that match the emotional tone of the original
+- Vimeo embed ID: `1169120409`
+- All buttons link to `/contact` or `/pricing` as appropriate
+- SEO: Helmet with funeral livestreaming title and meta description
 
