@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import FuneralLivestreaming from "./pages/FuneralLivestreaming";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,7 +28,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/weddings" element={<Services />} />
-            <Route path="/funerallivestreaming" element={<Home />} />
+            <Route path="/funerallivestreaming" element={<FuneralLivestreaming />} />
             <Route path="/services/grad-award-shows" element={<Home />} />
             <Route path="/services/additional" element={<Home />} />
             <Route path="/pricing" element={<Home />} />
