@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,7 +25,11 @@ const App = () => (
             
             {/* Future pages - placeholders */}
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/weddings" element={<Services />} />
+            <Route path="/funerallivestreaming" element={<Home />} />
+            <Route path="/services/grad-award-shows" element={<Home />} />
+            <Route path="/services/additional" element={<Home />} />
             <Route path="/pricing" element={<Home />} />
             <Route path="/blog" element={<Home />} />
             <Route path="/faq" element={<Home />} />
