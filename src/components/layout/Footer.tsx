@@ -48,8 +48,9 @@ export const Footer = () => {
               </a>
             </div>
             <div className="flex flex-col gap-2">
-              <a href="mailto:hello@dreamstreams.ca" className="font-body text-sm text-primary-foreground/80 hover:text-accent transition-colors inline-flex items-center justify-center md:justify-end gap-2">info@dreamstreams.ca<Mail className="w-4 h-4" />
-                hello@dreamstreams.ca
+              <a href="mailto:info@dreamstreams.ca" className="font-body text-sm text-primary-foreground/80 hover:text-accent transition-colors inline-flex items-center justify-center md:justify-end gap-2">
+                <Mail className="w-4 h-4" />
+                info@dreamstreams.ca
               </a>
             </div>
           </div>
