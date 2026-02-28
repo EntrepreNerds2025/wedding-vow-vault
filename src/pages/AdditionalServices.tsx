@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
 
 import bannerImg from "@/assets/additional/banner.webp";
 import corporateImg from "@/assets/additional/corporate.webp";
@@ -235,32 +236,18 @@ const AdditionalServices = () => {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-primary py-16 md:py-20">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+        <section className="py-16 md:py-20 bg-background">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Want to reach an unlimited audience..
             </h2>
-            <p className="text-primary-foreground/80 text-lg mb-10 max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Let us turn your events into dynamic livestreamed experiences that
               captivate audiences around the world.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm font-body">
-              {[
-                { label: "What", path: "/services" },
-                { label: "Where", path: "/about" },
-                { label: "Who", path: "/about" },
-                { label: "Find Us", path: "/contact" },
-                { label: "Contact Us", path: "/contact" },
-              ].map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.path}
-                  className="text-primary-foreground/70 hover:text-accent transition-colors uppercase tracking-wider"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-body px-8">
+              <Link to="/contact">Let's Chat!</Link>
+            </Button>
           </div>
         </section>
       </main>
