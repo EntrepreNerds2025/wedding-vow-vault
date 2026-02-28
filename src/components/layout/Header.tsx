@@ -14,7 +14,6 @@ import Logo from "@/assets/Dream_Streams_Logo.png";
 const serviceSubItems = [
   { label: "Weddings", path: "/services/weddings" },
   { label: "Funerals", path: "/funerallivestreaming" },
-  { label: "Grad and Award Shows", path: "/services/grad-award-shows" },
   { label: "Additional Services", path: "/services/additional" },
 ];
 
@@ -23,7 +22,6 @@ const navItems = [
   { label: "ABOUT", path: "/about" },
   { label: "SERVICES", path: "/services", hasDropdown: true },
   { label: "PRICING", path: "/pricing" },
-  { label: "BLOG", path: "/blog" },
   { label: "FAQ", path: "/faq" },
   { label: "PORTFOLIO", path: "/portfolio" },
   { label: "TESTIMONIALS", path: "/testimonials" },
