@@ -1,57 +1,34 @@
 
 
-# Contact Pages + Funeral Page Updates + CRM Integration
+# Funeral Page Cleanup + Contact Page Updates
 
-## Overview
-Create a styled contact system with 3 service types (Funeral, Wedding, Other), update the funeral page (banner height, new button, updated links), and connect everything to the Impact Loop CRM.
+## 1. Contact Page: Reorder dropdown (Contact.tsx)
 
-## 1. Funeral Page Updates (`src/pages/FuneralLivestreaming.tsx`)
+Change the dropdown order from Funeral/Wedding/Other to **Wedding/Funeral/Other**, and update the default redirect so `/contact` goes to `/contact/weddings` instead of `/contact/funerals`.
 
-- **Banner height**: Change section 3 from `h-[50vh] min-h-[300px]` to `h-[25vh] min-h-[150px]`
-- **"Get Started" button**: Add below the text in "Why Livestream a Funeral" (section 4)
-- **All buttons**: Update every `Link to="/contact"` and `Link to="/pricing"` to point to `/contact/funerals`
+**Files:** `src/pages/Contact.tsx` (reorder SelectItems), `src/App.tsx` (change redirect target), also update the `serviceConfig` default fallback from `"funerals"` to `"weddings"`.
 
-## 2. Contact Page (`src/pages/Contact.tsx`)
+## 2. Funeral Page: Replace hero banner image (FuneralLivestreaming.tsx)
 
-A new page matching the uploaded screenshot designs:
+Copy the uploaded image (`Funeral_New_Banner.png`) into `src/assets/funeral/` and import it to replace the current `heroFuneral` image in the hero banner section (section 1, line 97).
 
-- "lets chat." heading in Playfair Display
-- Decorative peach/copper organic blob shapes
-- Underline-style inputs (bottom border only)
-- Service type dropdown at top to switch between Funeral / Wedding / Other
+## 3. Funeral Page: Delete sections
 
-**Funeral Form**: Full Name, Email, Phone, Event Date, Location, How did you hear about us (dropdown), Message, Promo Code
+Remove these 5 sections from `FuneralLivestreaming.tsx`:
 
-**Wedding Form**: Bride Name, Groom Name, Email, Phone, Wedding Date, Ceremony Time, Venue Address, Package Interest (Bronze/Silver/Gold radio), Add-ons (checkboxes: Dream Story, Dream Thank You, Wedding Highlight Film, Social Media Highlight, Additional 1+ Hour, Reception, Zoom TV Monitor, Drone Operator, None), Internet Connectivity, How heard, Message
+- **Section 2 (lines 105-123):** "You never know how strong you are" quote + intro text
+- **Section 3 (lines 126-137):** "Dream and Grieve with Unlimited Attendees" banner
+- **Section 7 (lines 251-282):** "What Makes Dream Streams Unique?" with 4 image cards
+- **Section 8 (lines 285-303):** Family photo / everyone holding hands
+- **Section 12 (lines 422-432):** Bottom "Contact Us" button bar
 
-**Other Form**: Same layout as Funeral
+The remaining sections (Why Livestream, Video Experience, We're Here to Help, Packages, Spiritual Leaders, Ready to Get Started CTA) stay as-is.
 
-Each form validates with Zod and POSTs to the CRM on submit with success/error toast feedback.
+## Files to modify
+- `src/pages/FuneralLivestreaming.tsx` -- replace banner image, delete 5 sections
+- `src/pages/Contact.tsx` -- reorder dropdown items
+- `src/App.tsx` -- update `/contact` redirect to `/contact/weddings`
 
-## 3. CRM Integration
-
-Forms POST directly to:
-```text
-POST https://oyjbpxdcazamsdtrrmey.supabase.co/functions/v1/receive-dream-streams-inquiry
-Headers: apikey: <anon-key>, Content-Type: application/json
-```
-
-Payload includes `inquiry_type` ("funeral", "wedding", or "other") plus all form fields. The anon key is publishable and will be stored as a constant in the code.
-
-## 4. Routing (`src/App.tsx`)
-
-- `/contact` redirects to `/contact/funerals`
-- `/contact/funerals`, `/contact/weddings`, `/contact/other` render the Contact page with the matching form active
-
-## 5. Header Navigation (`src/components/layout/Header.tsx`)
-
-Update the "CONTACT US" nav link to point to `/contact`.
-
-## Files to Create
-- `src/pages/Contact.tsx`
-
-## Files to Modify
-- `src/pages/FuneralLivestreaming.tsx` -- banner height, add button, update links
-- `src/App.tsx` -- add contact routes
-- `src/components/layout/Header.tsx` -- update contact link
+## File to copy
+- `user-uploads://Funeral_New_Banner.png` to `src/assets/funeral/Funeral_New_Banner.png`
 
