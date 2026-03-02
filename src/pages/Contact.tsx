@@ -59,10 +59,10 @@ const funeralSchema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(1, "Phone is required").max(30),
   event_date: z.string().optional(),
+  start_time: z.string().trim().max(50).optional(),
   location: z.string().trim().max(200).optional(),
   how_heard: z.string().optional(),
   message: z.string().trim().max(2000).optional(),
-  promo_code: z.string().trim().max(50).optional(),
 });
 
 const weddingSchema = z.object({
@@ -128,7 +128,10 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
         last_name: nameParts.slice(1).join(" ") || nameParts[0],
       };
       await submitToCRM(inquiryType, payload);
-      toast({ title: "Inquiry sent!", description: "We'll be in touch soon." });
+      const description = inquiryType === "funeral"
+        ? "We'll be in touch soon to help honor your loved one."
+        : "We'll be in touch soon about your project.";
+      toast({ title: "Inquiry sent!", description });
       reset();
     } catch (e: any) {
       toast({ title: "Something went wrong", description: e.message, variant: "destructive" });
@@ -157,7 +160,11 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>{inquiryType === "funeral" ? "Event Date" : "Project Date"}</Label>
-          <Input {...register("event_date")} type="date" className={inputClass} />
+          <Input {...register("event_date")} placeholder={inquiryType === "funeral" ? "e.g. March 15, 2026" : "e.g. March 15, 2026"} className={inputClass} />
+        </div>
+        <div className="space-y-2">
+          <Label className={labelClass}>Start Time</Label>
+          <Input {...register("start_time")} placeholder="e.g. 2:00 PM" className={inputClass} />
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Location</Label>
@@ -186,10 +193,6 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
       <div className="space-y-2">
         <Label className={labelClass}>Tell me more about {inquiryType === "funeral" ? "this project" : "your project"}</Label>
         <Textarea {...register("message")} placeholder="Share any details..." className={`${inputClass} min-h-[100px]`} />
-      </div>
-      <div className="space-y-2 max-w-xs">
-        <Label className={labelClass}>Promo Code</Label>
-        <Input {...register("promo_code")} placeholder="Promo Code" className={inputClass} />
       </div>
       <Button
         type="submit"
