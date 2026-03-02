@@ -14,12 +14,31 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { useToast } from "@/hooks/use-toast";
 import { useParams, useNavigate } from "react-router-dom";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const TIME_OPTIONS = [
+  "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM",
+  "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
+  "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM",
+  "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM",
+  "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM",
+  "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM",
+  "8:00 PM",
+];
 
 const CRM_URL = "https://oyjbpxdcazamsdtrrmey.supabase.co/functions/v1/receive-dream-streams-inquiry";
 const CRM_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95amJweGRjYXphbXNkdHJybWV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyMjM0MTgsImV4cCI6MjA4Nzc5OTQxOH0.n-j0RqwqckV3kisVL-JnjDx84AEOGUKY6SWxnLFUjmE";
@@ -160,11 +179,54 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>{inquiryType === "funeral" ? "Event Date" : "Project Date"}</Label>
-          <Input {...register("event_date")} placeholder={inquiryType === "funeral" ? "e.g. March 15, 2026" : "e.g. March 15, 2026"} className={inputClass} />
+          <Controller
+            name="event_date"
+            control={control}
+            render={({ field }) => {
+              const dateValue = field.value ? new Date(field.value) : undefined;
+              return (
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(inputClass, "w-full justify-start text-left font-normal", !field.value && "text-muted-foreground/50")}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {field.value ? format(new Date(field.value), "PPP") : "Pick a date"}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={dateValue}
+                      onSelect={(date) => field.onChange(date ? format(date, "yyyy-MM-dd") : "")}
+                      initialFocus
+                      className={cn("p-3 pointer-events-auto")}
+                    />
+                  </PopoverContent>
+                </Popover>
+              );
+            }}
+          />
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Start Time</Label>
-          <Input {...register("start_time")} placeholder="e.g. 2:00 PM" className={inputClass} />
+          <Controller
+            name="start_time"
+            control={control}
+            render={({ field }) => (
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger className={inputClass}>
+                  <SelectValue placeholder="Select time..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {TIME_OPTIONS.map((t) => (
+                    <SelectItem key={t} value={t}>{t}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            )}
+          />
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Location</Label>
@@ -272,11 +334,54 @@ function WeddingForm() {
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Wedding Date</Label>
-          <Input {...register("wedding_date")} placeholder="e.g. August 9, 2026" className={inputClass} />
+          <Controller
+            name="wedding_date"
+            control={control}
+            render={({ field }) => {
+              const dateValue = field.value ? new Date(field.value) : undefined;
+              return (
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(inputClass, "w-full justify-start text-left font-normal", !field.value && "text-muted-foreground/50")}
+                    >
+                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      {field.value ? format(new Date(field.value), "PPP") : "Pick a date"}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={dateValue}
+                      onSelect={(date) => field.onChange(date ? format(date, "yyyy-MM-dd") : "")}
+                      initialFocus
+                      className={cn("p-3 pointer-events-auto")}
+                    />
+                  </PopoverContent>
+                </Popover>
+              );
+            }}
+          />
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Ceremony Time</Label>
-          <Input {...register("ceremony_time")} placeholder="e.g. 3:00 PM" className={inputClass} />
+          <Controller
+            name="ceremony_time"
+            control={control}
+            render={({ field }) => (
+              <Select onValueChange={field.onChange} value={field.value}>
+                <SelectTrigger className={inputClass}>
+                  <SelectValue placeholder="Select time..." />
+                </SelectTrigger>
+                <SelectContent>
+                  {TIME_OPTIONS.map((t) => (
+                    <SelectItem key={t} value={t}>{t}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            )}
+          />
         </div>
         <div className="md:col-span-2 space-y-2">
           <Label className={labelClass}>Venue Address</Label>
