@@ -24,7 +24,15 @@ import { useState } from "react";
 const CRM_URL = "https://oyjbpxdcazamsdtrrmey.supabase.co/functions/v1/receive-dream-streams-inquiry";
 const CRM_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95amJweGRjYXphbXNkdHJybWV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyMjM0MTgsImV4cCI6MjA4Nzc5OTQxOH0.n-j0RqwqckV3kisVL-JnjDx84AEOGUKY6SWxnLFUjmE";
 
-const HOW_HEARD_OPTIONS = [
+const HOW_HEARD_OPTIONS_WEDDING = [
+  "Google Search",
+  "Social Media",
+  "Referral",
+  "Church/Place of Worship",
+  "Other",
+];
+
+const HOW_HEARD_OPTIONS_FUNERAL = [
   "Google Search",
   "Social Media",
   "Referral",
@@ -166,7 +174,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
                   <SelectValue placeholder="Select..." />
                 </SelectTrigger>
                 <SelectContent>
-                  {HOW_HEARD_OPTIONS.map((opt) => (
+                  {HOW_HEARD_OPTIONS_FUNERAL.map((opt) => (
                     <SelectItem key={opt} value={opt}>{opt}</SelectItem>
                   ))}
                 </SelectContent>
@@ -261,11 +269,11 @@ function WeddingForm() {
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Wedding Date</Label>
-          <Input {...register("wedding_date")} type="date" className={inputClass} />
+          <Input {...register("wedding_date")} placeholder="e.g. August 9, 2026" className={inputClass} />
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Ceremony Time</Label>
-          <Input {...register("ceremony_time")} type="time" className={inputClass} />
+          <Input {...register("ceremony_time")} placeholder="e.g. 3:00 PM" className={inputClass} />
         </div>
         <div className="md:col-span-2 space-y-2">
           <Label className={labelClass}>Venue Address</Label>
@@ -340,7 +348,7 @@ function WeddingForm() {
                   <SelectValue placeholder="Select..." />
                 </SelectTrigger>
                 <SelectContent>
-                  {HOW_HEARD_OPTIONS.map((opt) => (
+                  {HOW_HEARD_OPTIONS_WEDDING.map((opt) => (
                     <SelectItem key={opt} value={opt}>{opt}</SelectItem>
                   ))}
                 </SelectContent>
