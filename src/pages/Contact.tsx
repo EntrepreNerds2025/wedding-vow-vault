@@ -113,7 +113,13 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
   const onSubmit = async (data: FuneralFormData) => {
     setSubmitting(true);
     try {
-      await submitToCRM(inquiryType, data);
+      const nameParts = data.full_name.trim().split(/\s+/);
+      const payload = {
+        ...data,
+        first_name: nameParts[0],
+        last_name: nameParts.slice(1).join(" ") || nameParts[0],
+      };
+      await submitToCRM(inquiryType, payload);
       toast({ title: "Inquiry sent!", description: "We'll be in touch soon." });
       reset();
     } catch (e: any) {
@@ -215,7 +221,12 @@ function WeddingForm() {
   const onSubmit = async (data: WeddingFormData) => {
     setSubmitting(true);
     try {
-      await submitToCRM("wedding", data);
+      const payload = {
+        ...data,
+        first_name: data.bride_name,
+        last_name: data.groom_name,
+      };
+      await submitToCRM("wedding", payload);
       toast({ title: "Inquiry sent!", description: "We'll be in touch soon about your big day!" });
       reset();
     } catch (e: any) {
