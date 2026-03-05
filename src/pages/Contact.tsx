@@ -227,6 +227,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
               </Select>
             )}
           />
+          {errors.start_time && <p className="text-sm text-destructive">{errors.start_time.message}</p>}
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Location</Label>
