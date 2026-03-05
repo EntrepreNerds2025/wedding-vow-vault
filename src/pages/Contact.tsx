@@ -365,7 +365,7 @@ function WeddingForm() {
           />
         </div>
         <div className="space-y-2">
-          <Label className={labelClass}>Ceremony Time</Label>
+          <Label className={labelClass}>Ceremony Time *</Label>
           <Controller
             name="ceremony_time"
             control={control}
