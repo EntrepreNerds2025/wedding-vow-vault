@@ -90,7 +90,7 @@ const weddingSchema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(1, "Phone is required").max(30),
   wedding_date: z.string().optional(),
-  ceremony_time: z.string().trim().max(50).optional(),
+  ceremony_time: z.string().trim().min(1, "Ceremony time is required").max(50),
   venue_address: z.string().trim().max(300).optional(),
   package_interest: z.string().optional(),
   add_ons: z.array(z.string()).optional(),
