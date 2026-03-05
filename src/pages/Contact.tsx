@@ -210,7 +210,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
           />
         </div>
         <div className="space-y-2">
-          <Label className={labelClass}>Start Time</Label>
+          <Label className={labelClass}>Start Time *</Label>
           <Controller
             name="start_time"
             control={control}
