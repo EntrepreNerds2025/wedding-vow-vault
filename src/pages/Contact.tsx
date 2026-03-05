@@ -383,6 +383,7 @@ function WeddingForm() {
               </Select>
             )}
           />
+          {errors.ceremony_time && <p className="text-sm text-destructive">{errors.ceremony_time.message}</p>}
         </div>
         <div className="md:col-span-2 space-y-2">
           <Label className={labelClass}>Venue Address</Label>
