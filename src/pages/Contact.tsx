@@ -78,7 +78,7 @@ const funeralSchema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(1, "Phone is required").max(30),
   event_date: z.string().optional(),
-  start_time: z.string().trim().max(50).optional(),
+  start_time: z.string().trim().min(1, "Start time is required").max(50),
   location: z.string().trim().max(200).optional(),
   how_heard: z.string().optional(),
   message: z.string().trim().max(2000).optional(),
@@ -90,7 +90,7 @@ const weddingSchema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(1, "Phone is required").max(30),
   wedding_date: z.string().optional(),
-  ceremony_time: z.string().trim().max(50).optional(),
+  ceremony_time: z.string().trim().min(1, "Ceremony time is required").max(50),
   venue_address: z.string().trim().max(300).optional(),
   package_interest: z.string().optional(),
   add_ons: z.array(z.string()).optional(),
@@ -210,7 +210,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
           />
         </div>
         <div className="space-y-2">
-          <Label className={labelClass}>Start Time</Label>
+          <Label className={labelClass}>Start Time *</Label>
           <Controller
             name="start_time"
             control={control}
@@ -227,6 +227,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
               </Select>
             )}
           />
+          {errors.start_time && <p className="text-sm text-destructive">{errors.start_time.message}</p>}
         </div>
         <div className="space-y-2">
           <Label className={labelClass}>Location</Label>
@@ -365,7 +366,7 @@ function WeddingForm() {
           />
         </div>
         <div className="space-y-2">
-          <Label className={labelClass}>Ceremony Time</Label>
+          <Label className={labelClass}>Ceremony Time *</Label>
           <Controller
             name="ceremony_time"
             control={control}
@@ -382,6 +383,7 @@ function WeddingForm() {
               </Select>
             )}
           />
+          {errors.ceremony_time && <p className="text-sm text-destructive">{errors.ceremony_time.message}</p>}
         </div>
         <div className="md:col-span-2 space-y-2">
           <Label className={labelClass}>Venue Address</Label>
