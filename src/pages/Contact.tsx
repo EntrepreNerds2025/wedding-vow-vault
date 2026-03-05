@@ -78,7 +78,7 @@ const funeralSchema = z.object({
   email: z.string().trim().email("Invalid email").max(255),
   phone: z.string().trim().min(1, "Phone is required").max(30),
   event_date: z.string().optional(),
-  start_time: z.string().trim().max(50).optional(),
+  start_time: z.string().trim().min(1, "Start time is required").max(50),
   location: z.string().trim().max(200).optional(),
   how_heard: z.string().optional(),
   message: z.string().trim().max(2000).optional(),
