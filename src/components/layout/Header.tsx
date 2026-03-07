@@ -17,11 +17,16 @@ const serviceSubItems = [
   { label: "Additional Services", path: "/services/additional" },
 ];
 
+const pricingSubItems = [
+  { label: "Weddings", path: "/pricing" },
+  { label: "Funerals", path: "/funerallivestreaming" },
+];
+
 const navItems = [
   { label: "HOME", path: "/home" },
   { label: "ABOUT", path: "/about" },
-  { label: "SERVICES", path: "/services", hasDropdown: true },
-  { label: "PRICING", path: "/pricing" },
+  { label: "SERVICES", path: "/services", hasDropdown: true, subItems: serviceSubItems },
+  { label: "PRICING", path: "/pricing", hasDropdown: true, subItems: pricingSubItems },
   { label: "FAQ", path: "/faq" },
   { label: "PORTFOLIO", path: "/portfolio" },
   { label: "TESTIMONIALS", path: "/testimonials" },
@@ -30,7 +35,7 @@ const navItems = [
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navigate = useNavigate();
 
   return (
@@ -54,7 +59,7 @@ export const Header = () => {
                     </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="min-w-[200px]">
-                    {serviceSubItems.map((sub) => (
+                    {item.subItems?.map((sub) => (
                       <DropdownMenuItem
                         key={sub.path}
                         className="cursor-pointer font-body text-sm"
@@ -103,14 +108,14 @@ export const Header = () => {
                   <div key={item.path}>
                     <button
                       className="w-full flex items-center justify-between px-4 py-3 text-sm font-body font-medium text-foreground/80 hover:text-accent hover:bg-muted rounded-md transition-colors"
-                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                      onClick={() => setOpenDropdown(openDropdown === item.path ? null : item.path)}
                     >
                       {item.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === item.path ? "rotate-180" : ""}`} />
                     </button>
-                    {isServicesOpen && (
+                    {openDropdown === item.path && (
                       <div className="ml-4 flex flex-col gap-1">
-                        {serviceSubItems.map((sub) => (
+                        {item.subItems?.map((sub) => (
                           <NavLink
                             key={sub.path}
                             to={sub.path}
