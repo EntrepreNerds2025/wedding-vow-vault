@@ -59,7 +59,7 @@ export const Header = () => {
                     </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start" className="min-w-[200px]">
-                    {serviceSubItems.map((sub) => (
+                    {item.subItems?.map((sub) => (
                       <DropdownMenuItem
                         key={sub.path}
                         className="cursor-pointer font-body text-sm"
