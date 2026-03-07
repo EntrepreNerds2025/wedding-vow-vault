@@ -17,11 +17,16 @@ const serviceSubItems = [
   { label: "Additional Services", path: "/services/additional" },
 ];
 
+const pricingSubItems = [
+  { label: "Weddings", path: "/pricing" },
+  { label: "Funerals", path: "/funerallivestreaming" },
+];
+
 const navItems = [
   { label: "HOME", path: "/home" },
   { label: "ABOUT", path: "/about" },
-  { label: "SERVICES", path: "/services", hasDropdown: true },
-  { label: "PRICING", path: "/pricing" },
+  { label: "SERVICES", path: "/services", hasDropdown: true, subItems: serviceSubItems },
+  { label: "PRICING", path: "/pricing", hasDropdown: true, subItems: pricingSubItems },
   { label: "FAQ", path: "/faq" },
   { label: "PORTFOLIO", path: "/portfolio" },
   { label: "TESTIMONIALS", path: "/testimonials" },
