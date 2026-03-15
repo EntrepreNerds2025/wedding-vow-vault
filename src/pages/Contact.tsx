@@ -276,7 +276,7 @@ function WeddingForm() {
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, control, reset, formState: { errors }, watch, setValue } = useForm<WeddingFormData>({
     resolver: zodResolver(weddingSchema),
-    defaultValues: { add_ons: [] },
+    defaultValues: { add_ons: [], ceremony_time: "" },
   });
 
   const addOns = watch("add_ons") || [];
