@@ -31,6 +31,7 @@ import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const TIME_OPTIONS = [
+  "TBD",
   "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM",
   "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
   "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM",
@@ -135,6 +136,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, control, reset, formState: { errors } } = useForm<FuneralFormData>({
     resolver: zodResolver(funeralSchema),
+    defaultValues: { start_time: "" },
   });
 
   const onSubmit = async (data: FuneralFormData) => {
@@ -274,7 +276,7 @@ function WeddingForm() {
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, control, reset, formState: { errors }, watch, setValue } = useForm<WeddingFormData>({
     resolver: zodResolver(weddingSchema),
-    defaultValues: { add_ons: [] },
+    defaultValues: { add_ons: [], ceremony_time: "" },
   });
 
   const addOns = watch("add_ons") || [];
