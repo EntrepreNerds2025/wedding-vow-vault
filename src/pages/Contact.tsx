@@ -136,6 +136,7 @@ function FuneralForm({ inquiryType }: { inquiryType: "funeral" | "other" }) {
   const [submitting, setSubmitting] = useState(false);
   const { register, handleSubmit, control, reset, formState: { errors } } = useForm<FuneralFormData>({
     resolver: zodResolver(funeralSchema),
+    defaultValues: { start_time: "" },
   });
 
   const onSubmit = async (data: FuneralFormData) => {
