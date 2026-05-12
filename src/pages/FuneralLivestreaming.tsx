@@ -273,6 +273,71 @@ const FuneralLivestreaming = () => {
             </div>
           </section>
 
+          {/* 9b. Add-Ons */}
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-3xl md:text-4xl text-primary mb-4">
+                  Add-Ons
+                </h2>
+                <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                  Customize your package with additional services to make the day even more memorable.
+                </p>
+              </div>
+              <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: "Burial Livestream",
+                    price: "$300",
+                    image: "https://images.unsplash.com/photo-1602522953860-44eb37798e22?w=800&q=80",
+                    description: "We have the capability to live stream outdoors at a burial site without the need of power depending on the length of time of the burial.",
+                  },
+                  {
+                    name: "Videography Highlight Film",
+                    price: "$400",
+                    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
+                    description: "Looking to combine our videographer and live streaming package? Have your event live-streamed while capturing every moment, put into a highlight video that can be watched again and again. When you think about the cost of hiring a separate videographer.. it's a steal of a deal.",
+                  },
+                  {
+                    name: "Zoom – TV Monitor Rental",
+                    price: "$250",
+                    image: "https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?w=800&q=80",
+                    description: "Looking for an opportunity to virtually and visually engage with your guests? Rent our large screen monitor for Zoom to see everyone viewing the event on a large screen.",
+                  },
+                  {
+                    name: "Dream Story (We Film and Edit)",
+                    price: "$350",
+                    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+                    description: "A short film of the unique story of your late loved one, to be played while your audience waits for your live stream event to begin. What a beautiful opportunity to share your love story with your friends and family.",
+                  },
+                  {
+                    name: "Funeral Viewing",
+                    price: "$300",
+                    image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80",
+                    description: "Livestream the Viewing before the funeral.",
+                  },
+                  {
+                    name: "Additional Hour",
+                    price: "$150",
+                    image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&q=80",
+                    description: "Purchase an additional hour of coverage to meet the needs of your special day.",
+                  },
+                ].map((addon, i) => (
+                  <div key={i} className="bg-secondary rounded-lg overflow-hidden shadow-lg flex flex-col">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img src={addon.image} alt={addon.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <h3 className="font-display text-xl text-primary mb-1">{addon.name}</h3>
+                      <p className="font-display text-2xl text-accent mb-3">{addon.price}</p>
+                      <p className="font-body text-sm text-muted-foreground">{addon.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* 10. Spiritual Leader Section */}
           <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
