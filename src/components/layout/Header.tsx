@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Instagram, Facebook, ChevronDown } from "lucide-react";
+import { Menu, X, Facebook, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import {
@@ -85,9 +85,6 @@ export const Header = () => {
 
           {/* Desktop Right Icons */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="https://www.instagram.com/dreamstreams.ca" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="Instagram">
-              <Instagram className="w-5 h-5" />
-            </a>
             <a href="https://www.facebook.com/dreamstreams.ca" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="Facebook">
               <Facebook className="w-5 h-5" />
             </a>
@@ -142,9 +139,6 @@ export const Header = () => {
                 )
               )}
               <div className="flex items-center gap-4 px-4 pt-4 mt-2 border-t border-border">
-                <a href="https://www.instagram.com/dreamstreams.ca" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="Instagram">
-                  <Instagram className="w-5 h-5" />
-                </a>
                 <a href="https://www.facebook.com/dreamstreams.ca" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" aria-label="Facebook">
                   <Facebook className="w-5 h-5" />
                 </a>

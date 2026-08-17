@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Mail, Phone } from "lucide-react";
+import { Facebook, Mail, Phone } from "lucide-react";
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-primary text-primary-foreground">
@@ -40,9 +40,6 @@ export const Footer = () => {
           <div className="text-center md:text-right">
             <h3 className="font-display text-lg mb-4">Connect With Us</h3>
             <div className="flex justify-center md:justify-end gap-4 mb-4">
-              <a href="https://www.instagram.com/dreamstreams.ca" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent transition-colors" aria-label="Instagram">
-                <Instagram className="w-6 h-6" />
-              </a>
               <a href="https://www.facebook.com/dreamstreams.ca" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-accent transition-colors" aria-label="Facebook">
                 <Facebook className="w-6 h-6" />
               </a>
