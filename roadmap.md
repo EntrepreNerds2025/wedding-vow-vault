@@ -1,5 +1,6 @@
 # Contact inquiry email delivery
 
-- [ ] Enable direct app email delivery to info@dreamstreams.ca.
-- [ ] Switch wedding, funeral, and other forms away from Impact Loop CRM while retaining required time.
-- [ ] Verify all three submissions and email acceptance.
+- [x] Enable Lovable Cloud for direct app email delivery.
+- [ ] Configure sender domain — blocked on the user's email domain setup.
+- [ ] Switch all three forms away from Impact Loop CRM while retaining required time — waits on sender domain setup.
+- [ ] Verify all three submissions and email acceptance — waits on email setup and form switch.
