@@ -115,19 +115,15 @@ const serviceConfig = {
 type ServiceType = keyof typeof serviceConfig;
 
 async function submitToCRM(inquiryType: string, data: Record<string, unknown>) {
-  const response = await fetch(CRM_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: CRM_API_KEY,
-    },
-    body: JSON.stringify({ inquiry_type: inquiryType, ...data }),
+  const { data: res, error } = await supabase.functions.invoke("submit-contact-inquiry", {
+    body: { inquiry_type: inquiryType, ...data },
   });
-  if (!response.ok) {
-    const err = await response.json().catch(() => ({}));
-    throw new Error(err.error || "Failed to submit inquiry");
+  if (error || res?.error) {
+    let msg = res?.error;
+    try { msg = msg || (await (error as any)?.context?.json())?.error; } catch {}
+    throw new Error(msg || "Failed to submit inquiry");
   }
-  return response.json();
+  return res;
 }
 
 // ── Funeral / Other Form ──
